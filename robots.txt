@@ -1,0 +1,33 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://rashidyousufzai.com/sitemap.xml
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
+
+# Allow important pages
+Allow: /index.html
+Allow: /project-list.html
+Allow: /contact.html
+Allow: /about.html
+Allow: /assets/
+
+# Crawl delay (optional)
+Crawl-delay: 1 

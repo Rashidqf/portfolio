@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Custom Bead Designer Tool - Shopify Integration | Lendex Portfolio</title>
+    <meta name="description"
+        content="Explore the Custom Bead Designer Tool - a sophisticated Shopify app that integrates a DIY crystal bead designer with 3D preview, inventory management, and seamless e-commerce integration." />
+    <meta name="keywords"
+        content="custom bead designer, Shopify app, 3D preview, crystal beads, Remix.js, React, Three.js, PostgreSQL, Prisma, e-commerce integration, custom bracelet design">
+    <meta name="author" content="Lendex Portfolio">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourportfolio.com/project-detail/CustomBeadDesignerTool.html">
+    <meta property="og:title" content="Custom Bead Designer Tool - Shopify Integration | Lendex Portfolio">
+    <meta property="og:description"
+        content="Explore the Custom Bead Designer Tool - a sophisticated Shopify app that integrates a DIY crystal bead designer with 3D preview and inventory management.">
+    <meta property="og:image" content="https://yourportfolio.com/assets/images/project/project-details-hero-img.jpg">
+    <meta property="og:site_name" content="Lendex Portfolio">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourportfolio.com/project-detail/CustomBeadDesignerTool.html">
+    <meta property="twitter:title" content="Custom Bead Designer Tool - Shopify Integration | Lendex Portfolio">
+    <meta property="twitter:description"
+        content="Explore the Custom Bead Designer Tool - a sophisticated Shopify app that integrates a DIY crystal bead designer with 3D preview and inventory management.">
+    <meta property="twitter:image"
+        content="https://yourportfolio.com/assets/images/project/project-details-hero-img.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourportfolio.com/project-detail/CustomBeadDesignerTool.html">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/fav1.ico" />
+
+    <!-- CSS
+    ============================================ -->
+
+    <!-- Minify Version -->
+    <link rel="stylesheet" href="../assets/css/vendor/vendor.min.css">
+    <link rel="stylesheet" href="../assets/css/plugins/plugins.min.css">
+    <link rel="stylesheet" href="../assets/css/style.min.css">
+
+    <!-- Enhanced Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Custom Bead Designer Tool - Shopify Integration",
+        "description": "Explore the Custom Bead Designer Tool - a sophisticated Shopify app that integrates a DIY crystal bead designer with 3D preview, inventory management, and seamless e-commerce integration.",
+        "url": "https://yourportfolio.com/project-detail/CustomBeadDesignerTool.html",
+        "inLanguage": "en-US",
+        "datePublished": "2024-01-01",
+        "dateModified": "2024-12-31",
+        "author": {
+            "@type": "Person",
+            "name": "Lendex Portfolio",
+            "url": "https://yourportfolio.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Lendex Portfolio",
+            "url": "https://yourportfolio.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://yourportfolio.com/assets/images/logo/logo.png"
+            }
+        },
+        "mainEntity": {
+            "@type": "SoftwareApplication",
+            "name": "Custom Bead Designer Tool - Shopify Integration",
+            "description": "A sophisticated Shopify private app that empowers customers to design personalized products using AI-driven image generation and editing tools with 3D preview capabilities.",
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web Browser",
+            "programmingLanguage": ["React.js", "Remix.js", "Node.js", "TypeScript", "PostgreSQL"],
+            "offers": {
+                "@type": "Offer",
+                "price": "1200.00",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+            },
+            "creator": {
+                "@type": "Person",
+                "name": "Lendex Portfolio",
+                "url": "https://yourportfolio.com"
+            },
+            "dateCreated": "2024-01-01",
+            "featureList": [
+                "Interactive 3D Bead Designer with Three.js",
+                "Shopify Storefront Integration",
+                "Bead Inventory Management System",
+                "Category Organization and Navigation",
+                "Line Item Customization for Cart",
+                "Design Save and Share Functionality",
+                "Responsive Mobile-First Design",
+                "PostgreSQL Database with Prisma ORM"
+            ],
+            "screenshot": "https://yourportfolio.com/assets/images/project/project-details-hero-img.jpg",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "ratingCount": "1"
+            }
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://yourportfolio.com"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Projects",
+                    "item": "https://yourportfolio.com/project-list.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Custom Bead Designer Tool",
+                    "item": "https://yourportfolio.com/project-detail/CustomBeadDesignerTool.html"
+                }
+            ]
+        }
+    }
+    </script>
+
+</head>
+
+<body>
+
+    <main class="main-wrapper">
+        <!-- .....:::::: Start Header Section :::::.... -->
+        <header class="header-section sticky-header d-none d-lg-block">
+            <div class="header-wrapper">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col">
+                            <!-- Start Header Logo -->
+                            <a href="../index.html" class="header-logo"
+                                title="Lendex Portfolio - Web Development Services">
+                                <img src="../assets/images/logo/logo.png"
+                                    alt="Lendex Portfolio Logo - Professional Web Development Services" width="150"
+                                    height="50">
+                            </a>
+                            <!-- End Header Logo -->
+                        </div>
+                        <div class="col-auto">
+                            <!-- Start Header Menu -->
+                            <ul class="header-nav">
+                                <li><a href="../index.html">Home</a></li>
+                                <li class="has-dropdown">
+                                    <a href="../service-list.html">Service</a>
+                                    <ul class="submenu">
+                                        <li><a href="../service-list.html">Services</a></li>
+                                        <li><a href="../service-details.html">Service Details</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-dropdown">
+                                    <a href="../blog-list.html">Blog</a>
+                                    <ul class="submenu">
+                                        <li><a href="../blog-list.html">Blog List Full Width</a></li>
+                                        <li><a href="../blog-list-sidebar-left.html">Blog List Left Sidebar</a></li>
+                                        <li><a href="../blog-list-sidebar-right.html">Blog List Right Sidebar</a></li>
+                                        <li><a href="../blog-details.html">Blog Details Full Width</a></li>
+                                        <li><a href="../blog-details-sidebar-left.html">Blog Details Left Sidebar</a></li>
+                                        <li><a href="../blog-details-sidebar-right.html">Blog Details Right Sidebar</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="has-dropdown">
+                                    <a href="#">Pages</a>
+                                    <ul class="submenu">
+                                        <li><a href="../about.html">About Us</a></li>
+                                        <li><a href="../project-list.html">Project</a></li>
+                                        <li><a href="../project-details.html">Project Details</a></li>
+                                        <li><a href="../faq.html">FAQ</a></li>
+                                        <li><a href="../404-page.html">404 Page</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                            <!-- End Header Menu -->
+                        </div>
+                        <div class="col">
+                            <div class="header-btn-link text-end">
+                                <a href="../contact.html" class="btn btn-sm btn-outline-one icon-space-left">Hire Me <i
+                                        class="icofont-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- .....:::::: End Header Section :::::.... -->
+
+        <!-- .....:::::: Start Mobile Header Section :::::.... -->
+        <div class="mobile-header d-block d-lg-none">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col">
+                        <div class="mobile-logo">
+                            <a href="../index.html"><img src="../assets/images/logo/logo.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mobile-action-link text-end">
+                            <a href="#mobile-menu-offcanvas" class="offcanvas-toggle offside-menu"><i
+                                    class="icofont-navigation-menu"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .....:::::: Start MobileHeader Section :::::.... -->
+
+        <!--  Start Offcanvas Mobile Menu Section -->
+        <div id="mobile-menu-offcanvas" class="offcanvas offcanvas-rightside offcanvas-mobile-menu-section">
+            <!-- Start Offcanvas Header -->
+            <div class="offcanvas-header text-right">
+                <button class="offcanvas-close"><i class="icofont-close-line"></i></button>
+            </div> <!-- End Offcanvas Header -->
+            <!-- Start Offcanvas Mobile Menu Wrapper -->
+            <div class="offcanvas-mobile-menu-wrapper">
+                <!-- Start Mobile Menu  -->
+                <div class="mobile-menu-bottom">
+                    <!-- Start Mobile Menu Nav -->
+                    <div class="offcanvas-menu">
+                        <ul>
+                            <li>
+                                <a href="../index.html"><span>Home</span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span>Services</span></a>
+                                <ul class="mobile-sub-menu">
+                                    <li><a href="../service-list.html">Service List</a></li>
+                                    <li><a href="../service-details.html">Service Details</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><span>Blog</span></a>
+                                <ul class="mobile-sub-menu">
+                                    <li><a href="../blog-list.html">Blog List Full Width</a></li>
+                                    <li><a href="../blog-list-sidebar-left.html">Blog List Left Sidebar</a></li>
+                                    <li><a href="../blog-list-sidebar-right.html">Blog List Right Sidebar</a></li>
+                                    <li><a href="../blog-details.html">Blog Details Full Width</a></li>
+                                    <li><a href="../blog-details-sidebar-left.html">Blog Details Left Sidebar</a></li>
+                                    <li><a href="../blog-details-sidebar-right.html">Blog Details Right Sidebar</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><span>Pages</span></a>
+                                <ul class="mobile-sub-menu">
+                                    <li><a href="../about.html">About Us</a></li>
+                                    <li><a href="../project-list.html">Project</a></li>
+                                    <li><a href="../project-details.html">Project Details</a></li>
+                                    <li><a href="../faq.html">FAQ</a></li>
+                                    <li><a href="../404-page.html">404 Page</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="../contact.html"><span>Contact</span></a>
+                            </li>
+                        </ul>
+                    </div> <!-- End Mobile Menu Nav -->
+                </div> <!-- End Mobile Menu -->
+
+                <!-- Start Mobile contact Info -->
+                <div class="mobile-contact-info text-center">
+                    <ul class="social-link">
+                        <li><a target="_blank" href="https://example.com/"><i class="icofont-facebook"></i></a>
+                        </li>
+                        <li><a target="_blank" href="https://example.com/"><i class="icofont-twitter"></i></a>
+                        </li>
+                        <li><a target="_blank" href="https://example.com/"><i class="icofont-skype"></i></a></li>
+                    </ul>
+                </div>
+                <!-- End Mobile contact Info -->
+
+            </div> <!-- End Offcanvas Mobile Menu Wrapper -->
+        </div>
+        <!-- ...:::: End Offcanvas Mobile Menu Section:::... -->
+
+        <!-- Offcanvas Overlay -->
+        <div class="offcanvas-overlay"></div>
+
+        <!-- .....:::::: Start Project Details Section :::::.... -->
+        <div class="project-details-section section-gap-tb-165">
+            <div class="project-details-box">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Start Project Content Section -->
+                            <div class="project-content-section pos-relative">
+                                <div class="project-hero-image">
+                                    <img src="../assets/images/project/project-details-hero-img.jpg"
+                                        alt="Custom Bead Designer Tool - Shopify Integration showing 3D bead designer interface with interactive preview"
+                                        width="800" height="600" loading="lazy">
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <!-- Start Section Content -->
+                                        <div class="default-content-style pos-relative">
+                                            <span class="section-tag">Custom Bead Designer Tool - Shopify Integration
+                                                Platform</span>
+                                            <h1 class="title">Custom Bead Designer Tool: Advanced Shopify Integration
+                                                with 3D Preview</h1>
+                                            <p>This project integrates a custom-built DIY crystal bead designer tool
+                                                into a Shopify store. The tool, originally built with HTML, CSS, and
+                                                JavaScript, is enhanced to provide a dynamic and seamless user
+                                                experience for creating custom bracelets. It allows for extensive
+                                                customization, detailed itemization in the cart, and robust backend
+                                                management for bead inventory.</p>
+
+                                            <p>The core of the project is a Shopify app built with Remix.js, which
+                                                handles both the frontend and backend logic. This app is responsible
+                                                for embedding the designer tool, managing bead data, and integrating
+                                                with Shopify's cart and order systems. The platform features an
+                                                interactive 3D preview using Three.js, allowing customers to visualize
+                                                their custom designs before purchase.</p>
+
+                                            <p>Built with modern web technologies including React.js, Remix.js, and
+                                                PostgreSQL, the Custom Bead Designer Tool provides a comprehensive
+                                                solution for e-commerce customization with advanced 3D visualization
+                                                capabilities.</p>
+
+                                            <h2 class="sub-title">Key Features of Custom Bead Designer Platform</h2>
+                                            <p>The Custom Bead Designer Tool includes a comprehensive set of features
+                                                designed to provide an immersive and interactive shopping experience
+                                                for custom jewelry creation.</p>
+
+                                            <ul class="content-list-item content-list-with-icon">
+                                                <li>
+                                                    <div class="left">
+                                                        <div class="icon">
+                                                            <i class="icofont-cube"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right">
+                                                        <h4 class="list-title">Interactive 3D Designer</h4>
+                                                        <p>Built using Three.js for 3D graphics rendering, providing
+                                                            an interactive 3D preview of the bracelet. Customers can
+                                                            visualize their custom designs in real-time with
+                                                            drag-and-drop functionality and dynamic updates.</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="left">
+                                                        <div class="icon">
+                                                            <i class="icofont-shop"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right">
+                                                        <h4 class="list-title">Shopify Storefront Integration</h4>
+                                                        <p>Seamlessly embedded into the Shopify storefront using
+                                                            Liquid templates and static assets. Provides a consistent
+                                                            user experience across all devices with responsive design
+                                                            and mobile optimization.</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="left">
+                                                        <div class="icon">
+                                                            <i class="icofont-database"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right">
+                                                        <h4 class="list-title">Bead Inventory Management</h4>
+                                                        <p>Comprehensive backend interface for merchants to easily
+                                                            add, edit, and manage bead options, including images,
+                                                            prices, and stock levels. Organized category system for
+                                                            efficient navigation and selection.</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+
+                                            <h2 class="sub-title">Advanced Technical Capabilities</h2>
+                                            <p>The Custom Bead Designer Tool leverages cutting-edge technologies to
+                                                provide a robust and scalable e-commerce customization platform with
+                                                advanced 3D visualization capabilities.</p>
+
+                                            <ul class="content-list-item content-list-with-icon">
+                                                <li>
+                                                    <div class="left">
+                                                        <div class="icon">
+                                                            <i class="icofont-shopping-cart"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right">
+                                                        <h4 class="list-title">Line Item Customization</h4>
+                                                        <p>The tool captures all customizations made by the user,
+                                                            such as selected beads and quantities, and passes them as
+                                                            line item properties to the Shopify cart. Includes visual
+                                                            representation of customized bracelets as thumbnails.</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="left">
+                                                        <div class="icon">
+                                                            <i class="icofont-save"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right">
+                                                        <h4 class="list-title">Design Save and Share</h4>
+                                                        <p>Users can save their custom bracelet designs to their
+                                                            account for future access. Share functionality allows
+                                                            users to share unique designs with others via generated
+                                                            URLs for collaborative design experiences.</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="left">
+                                                        <div class="icon">
+                                                            <i class="icofont-ui-browser"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right">
+                                                        <h4 class="list-title">Responsive Design</h4>
+                                                        <p>Fully optimized for mobile and tablet devices with
+                                                            adaptive layout components. Provides smooth UI/UX
+                                                            experiences regardless of platform, ensuring consistent
+                                                            functionality across all devices.</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+
+                                            <h2 class="sub-title">Technology Stack and Development Architecture</h2>
+                                            <p>The Custom Bead Designer Tool is built using modern web technologies
+                                                and cloud services to ensure optimal performance, scalability, and
+                                                reliability for e-commerce customization.</p>
+
+                                            <ul class="content-list-item content-list-with-icon">
+                                                <li>
+                                                    <div class="left">
+                                                        <div class="icon">
+                                                            <i class="icofont-code-alt"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right">
+                                                        <h4 class="list-title">Frontend Technologies</h4>
+                                                        <p>React.js with TypeScript for type-safe development,
+                                                            Tailwind CSS for modern styling, Vite as build tool,
+                                                            React-Konva and Fabric.js for canvas rendering, and
+                                                            Three.js for 3D graphics and visualization.</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="left">
+                                                        <div class="icon">
+                                                            <i class="icofont-server"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right">
+                                                        <h4 class="list-title">Backend Technologies</h4>
+                                                        <p>Remix.js for full-stack rendering and API routes, Node.js
+                                                            for server-side functionality, Prisma with SQLite for
+                                                            lightweight data storage, and comprehensive Shopify
+                                                            integration with OAuth 2.0 authentication.</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="left">
+                                                        <div class="icon">
+                                                            <i class="icofont-cloud"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right">
+                                                        <h4 class="list-title">Database & Deployment</h4>
+                                                        <p>PostgreSQL database with Prisma ORM for reliable data
+                                                            management, Digital Ocean hosting with Docker
+                                                            containerization, and comprehensive Shopify API
+                                                            integration for seamless e-commerce functionality.</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- End Section Content -->
+                                    </div>
+                                    <div class="col-xl-3 col-lg-4 offset-xl-1">
+                                        <div class="project-sidebar">
+                                            <h3 class="title">Project Information</h3>
+                                            <!-- Start Project Sidebar Item -->
+                                            <ul class="project-sidebar-list-item">
+                                                <!-- Start Project Single Box -->
+                                                <li class="project-sidebar-single-box">
+                                                    <h6 class="title-text">Project Name:</h6>
+                                                    <span class="text">Custom Bead Designer Tool</span>
+                                                </li>
+                                                <!-- End Project Single Box -->
+                                                <!-- Start Project Single Box -->
+                                                <li class="project-sidebar-single-box">
+                                                    <h6 class="title-text">Client:</h6>
+                                                    <span class="text">E-commerce Platform</span>
+                                                </li>
+                                                <!-- End Project Single Box -->
+                                                <!-- Start Project Single Box -->
+                                                <li class="project-sidebar-single-box">
+                                                    <h6 class="title-text">Budget:</h6>
+                                                    <span class="text">$1200.00</span>
+                                                </li>
+                                                <!-- End Project Single Box -->
+                                                <!-- Start Project Single Box -->
+                                                <li class="project-sidebar-single-box">
+                                                    <h6 class="title-text">Duration:</h6>
+                                                    <span class="text">35 days</span>
+                                                </li>
+                                                <!-- End Project Single Box -->
+                                                <!-- Start Project Single Box -->
+                                                <li class="project-sidebar-single-box">
+                                                    <h6 class="title-text">Technology Stack:</h6>
+                                                    <span class="text">React.js, Remix.js, Three.js, PostgreSQL</span>
+                                                </li>
+                                                <!-- End Project Single Box -->
+                                                <!-- Start Project Single Box -->
+                                                <li class="project-sidebar-single-box">
+                                                    <h6 class="title-text">Deployment:</h6>
+                                                    <span class="text">Digital Ocean (Docker)</span>
+                                                </li>
+                                                <!-- End Project Single Box -->
+                                            </ul>
+                                            <!-- End Project Sidebar Item -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- End Project Content Section -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .....:::::: End Project Details Section :::::.... -->
+
+        <!-- ...::: Start Counter Display Section :::... -->
+        <div class="counter-display-section section-gap-tb-165 section-bg-2">
+            <div class="counter-display-wrapper">
+                <div class="container">
+                    <div class="row justify-content-center justify-content-sm-start">
+                        <div class="d-block d-md-flex justify-content-md-start col-12 col-sm-4 col-md-4">
+                            <!-- Start Counterup Single Item -->
+                            <div class="counterup-single-item">
+                                <div class="icon">
+                                    <img src="../assets/images/icon/counterup-icon-1.png"
+                                        alt="Happy Clients Icon - 258+ Satisfied Customers" width="60" height="60"
+                                        loading="lazy">
+                                </div>
+                                <div class="content">
+                                    <h2 class="number"><span class="counter">2,58</span>+</h2>
+                                    <span class="text">Happy Clients</span>
+                                </div>
+                            </div>
+                            <!-- End Counterup Single Item -->
+                        </div>
+                        <div class="d-block d-md-flex justify-content-md-center col-12 col-sm-4 col-md-4">
+                            <!-- Start Counterup Single Item -->
+                            <div class="counterup-single-item">
+                                <div class="icon">
+                                    <img src="../assets/images/icon/counterup-icon-2.png"
+                                        alt="Projects Complete Icon - 590K+ Completed Projects" width="60" height="60"
+                                        loading="lazy">
+                                </div>
+                                <div class="content">
+                                    <h2 class="number"><span class="counter">590</span>K</h2>
+                                    <span class="text">Project Complete</span>
+                                </div>
+                            </div>
+                            <!-- End Counterup Single Item -->
+                        </div>
+                        <div class="d-block d-md-flex justify-content-md-end col-12 col-sm-4 col-md-4">
+                            <!-- Start Counterup Single Item -->
+                            <div class="counterup-single-item">
+                                <div class="icon">
+                                    <img src="../assets/images/icon/counterup-icon-3.png"
+                                        alt="Years of Experience Icon - 28+ Years Professional Experience" width="60"
+                                        height="60" loading="lazy">
+                                </div>
+                                <div class="content">
+                                    <h2 class="number"><span class="counter">28</span>+</h2>
+                                    <span class="text">Years of Experience</span>
+                                </div>
+                            </div>
+                            <!-- End Counterup Single Item -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ...::: End Counter Display Section :::... -->
+
+        <!-- ...::: Start Footer Section :::... -->
+        <footer class="footer-section section-bg overflow-hidden pos-relative">
+            <div class="footer-inner-shape-top-left"></div>
+            <div class="footer-inner-shape-top-right"></div>
+            <div class="footer-section-top section-gap-t-165">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Start Section Content -->
+                            <div class="section-content pos-relative text-center">
+                                <span class="section-tag">Get Latest Updates</span>
+                                <h2 class="section-title">Subscribe For Newsletter</h2>
+                            </div>
+                            <!-- End Section Content -->
+                        </div>
+                    </div>
+                    <div class="footer-top-wrapper text-center">
+                        <div class="row">
+                            <div class="col-12">
+                                <form action="#" class="footer-newsletter">
+                                    <input type="email" placeholder="demo@example.com">
+                                    <button class="submit-btn" type="submit">Subscribe Now</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-center section-gap-tb-165">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center mb-n5">
+                        <div class="col-auto mb-5">
+                            <!-- Start Single Footer Info -->
+                            <div class="footer-single-info">
+                                <a href="tel:+0123456789" class="info-box">
+                                    <span class="icon"><i class="icofont-phone"></i></span>
+                                    <span class="text">0123456789</span>
+                                </a>
+                            </div>
+                            <!-- Start Single Footer Info -->
+                        </div>
+                        <div class="col-auto mb-5">
+                            <!-- Start Single Footer Info -->
+                            <div class="footer-single-info">
+                                <a href="mailto:demo@example.com" class="info-box">
+                                    <span class="icon"><i class="icofont-envelope-open"></i></span>
+                                    <span class="text">demo@example.com</span>
+                                </a>
+                            </div>
+                            <!-- Start Single Footer Info -->
+                        </div>
+                        <div class="col-auto mb-5">
+                            <!-- Start Single Footer Info -->
+                            <div class="footer-single-info">
+                                <ul class="social-link">
+                                    <li><a href="https://www.example.com/" target="_blank"><i
+                                                class="icofont-facebook"></i></a></li>
+                                    <li><a href="https://www.example.com/" target="_blank"><i
+                                                class="icofont-dribbble"></i></a></li>
+                                    <li><a href="https://www.example.com/" target="_blank"><i
+                                                class="icofont-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                            <!-- Start Single Footer Info -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div
+                        class="row justify-content-center justify-content-md-between align-items-center flex-column-reverse flex-md-row">
+                        <div class="col-auto">
+                            <div class="footer-copyright">
+                                <p class="copyright-text">&copy; 2021 <a href="../index.html">Lendex</a> Made with <i
+                                        class="icofont-heart"></i> by <a href="https://hasthemes.com/"
+                                        target="_blank">HasThemes</a> </p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <a href="../index.html" class="footer-logo">
+                                <div class="logo">
+                                    <img src="../assets/images/logo/logo.png"
+                                        alt="Lendex Portfolio Logo - Professional Web Development Services" width="150"
+                                        height="50" loading="lazy">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        <!-- ...::: End Footer Section :::... -->
+
+        <!-- material-scrolltop button -->
+        <button class="material-scrolltop" type="button"></button>
+    </main>
+
+    <!-- Global Vendor, plugins JS -->
+
+    <!-- JS Files
+    ============================================ -->
+    <!-- Global Vendor, plugins JS -->
+
+    <!-- Minify Version -->
+    <script src="../assets/js/vendor.min.js"></script>
+    <script src="../assets/js/plugins.min.js"></script>
+
+    <!--Main JS (Common Activation Codes)-->
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

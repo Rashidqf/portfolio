@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://rashidyousufzai.com/sitemap.xml
+Sitemap: https://rashidyousufzai.netlify.app/sitemap.xml
 
 # Allow all major search engines
 User-agent: Googlebot

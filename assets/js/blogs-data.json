@@ -1,0 +1,132 @@
+{
+  "categories": [
+    {
+      "id": "ai-ml",
+      "name": "AI/ML",
+      "count": 4
+    },
+    {
+      "id": "web-dev",
+      "name": "Web Development",
+      "count": 0
+    },
+    {
+      "id": "mobile-apps",
+      "name": "Mobile Apps",
+      "count": 0
+    },
+    {
+      "id": "ui-ux",
+      "name": "UI/UX Design",
+      "count": 0
+    },
+    {
+      "id": "digital-marketing",
+      "name": "Digital Marketing",
+      "count": 0
+    },
+    {
+      "id": "brand-identity",
+      "name": "Brand Identity",
+      "count": 0
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Pinecone: The AI Database Powering Smarter ChatGPT Experiences",
+      "excerpt": "Discover how Pinecone's vector database revolutionizes AI interactions with ChatGPT. Learn about blazing-fast vector search, precision at scale, and effortless scalability for AI applications.",
+      "content": "In the rapidly evolving world of artificial intelligence, efficiency and scalability in data retrieval are more important than ever. One of the biggest challenges AI models like ChatGPT face is delivering highly relevant responses in real-time. Enter Pinecone, a revolutionary vector database that transforms how AI interacts with vast knowledge repositories.",
+      "category": "ai-ml",
+      "categoryName": "AI/ML",
+      "author": "Rashid Yousufzai",
+      "date": "2025-04-02",
+      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*i_ysvucE20LW9IImkvBkJg.png",
+      "file": "pinecone-ai-database-powering-smarter-chatgpt-experiences.html",
+      "likes": 1250,
+      "comments": 89,
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "The Open-Source AI Sidekick You Didn't Know You Needed: RAGFlow",
+      "excerpt": "Ever had a chatbot give you nonsense? RAGFlow is the open-source solution that ensures your AI applications provide accurate, contextual responses by eliminating hallucinations.",
+      "content": "We've all been there. You ask an AI assistant something important, and it confidently spits out a completely wrong answer. Maybe it tells you that the Eiffel Tower is in Germany or that Elon Musk discovered electricity. RAGFlow is an open-source retrieval-augmented generation (RAG) framework that helps AI fetch real-world knowledge before answering your question.",
+      "category": "ai-ml",
+      "categoryName": "AI/ML",
+      "author": "Rashid Yousufzai",
+      "date": "2025-03-22",
+      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*gx7_jFk7o2S9f-Sj0HDAMQ.png",
+      "file": "open-source-ai-sidekick-ragflow.html",
+      "likes": 1100,
+      "comments": 92,
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "RAGFlow vs. GPT: Which One is Right for Your AI Application?",
+      "excerpt": "Discover RAGFlow, the open-source AI framework that eliminates hallucinations and provides real-time, fact-checked responses. Learn how RAGFlow works with any AI model to create smarter chatbots.",
+      "content": "Discover RAGFlow, the open-source AI framework that eliminates hallucinations and provides real-time, fact-checked responses. Learn how RAGFlow works with any AI model to create smarter chatbots. This comprehensive guide explores the differences between RAGFlow and traditional GPT approaches.",
+      "category": "ai-ml",
+      "categoryName": "AI/ML",
+      "author": "Rashid Yousufzai",
+      "date": "2025-04-02",
+      "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi0052g0obsmn42r3wm5i.PNG",
+      "file": "ragflow-vs-gpt-which-one-right-for-ai-application.html",
+      "likes": 980,
+      "comments": 67,
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "Comparing RAGFlow with Other RAG Frameworks: LangChain, LlamaIndex & More",
+      "excerpt": "Compare RAGFlow, LangChain, and LlamaIndex for retrieval-augmented generation (RAG) in AI. Discover which RAG framework is best for your project based on features, performance, and use cases.",
+      "content": "Retrieval-Augmented Generation (RAG) has become a game-changer for AI applications, enabling models to fetch relevant data before generating responses. With multiple RAG frameworks available — such as RAGFlow, LangChain, and LlamaIndex — choosing the right one depends on various factors like ease of use, performance, and scalability.",
+      "category": "ai-ml",
+      "categoryName": "AI/ML",
+      "author": "Rashid Yousufzai",
+      "date": "2025-03-24",
+      "image": "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ELfLOnCPrZdhQvuKyi10YQ.jpeg",
+      "file": "comparing-ragflow-with-other-rag-frameworks-langchain-llamaindex.html",
+      "likes": 756,
+      "comments": 45,
+      "featured": false
+    }
+  ],
+  "pagination": {
+    "itemsPerPage": 6,
+    "totalItems": 4,
+    "totalPages": 1,
+    "currentPage": 1
+  },
+  "recentPosts": [
+    {
+      "id": 1,
+      "title": "Pinecone: The AI Database Powering Smarter ChatGPT Experiences",
+      "date": "2025-04-02",
+      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*i_ysvucE20LW9IImkvBkJg.png",
+      "file": "pinecone-ai-database-powering-smarter-chatgpt-experiences.html"
+    },
+    {
+      "id": 2,
+      "title": "The Open-Source AI Sidekick You Didn't Know You Needed: RAGFlow",
+      "date": "2025-03-22",
+      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*gx7_jFk7o2S9f-Sj0HDAMQ.png",
+      "file": "open-source-ai-sidekick-ragflow.html"
+    },
+    {
+      "id": 3,
+      "title": "RAGFlow vs. GPT: Which One is Right for Your AI Application?",
+      "date": "2025-04-02",
+      "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi0052g0obsmn42r3wm5i.PNG",
+      "file": "ragflow-vs-gpt-which-one-right-for-ai-application.html"
+    },
+    {
+      "id": 4,
+      "title": "Comparing RAGFlow with Other RAG Frameworks: LangChain, LlamaIndex & More",
+      "date": "2025-03-24",
+      "image": "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ELfLOnCPrZdhQvuKyi10YQ.jpeg",
+      "file": "comparing-ragflow-with-other-rag-frameworks-langchain-llamaindex.html"
+    }
+  ]
+} 

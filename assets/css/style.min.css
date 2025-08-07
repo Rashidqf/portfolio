@@ -4442,6 +4442,7 @@ p:last-child {
   background-image: url(../images/icon/top-arrow.svg);
   background-position: center 50%;
   background-repeat: no-repeat;
+  background-size: 24px 24px;
 }
 
 /* Custom Styles for New Sections */

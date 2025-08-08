@@ -52,9 +52,10 @@
   <link rel="dns-prefetch" href="https://rashidyousufzai.netlify.app">
   <meta http-equiv="x-dns-prefetch-control" content="on">
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/fav1.png" />
+  <link rel="icon" href="assets/images/fav1.ico" />
+  <link rel="shortcut icon" href="assets/images/fav1.ico" />
   <link rel="apple-touch-icon" href="assets/images/fav1.png" />
-  <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav1.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/fav1.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/fav1.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="assets/images/fav1.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="assets/images/fav1.png" />
@@ -1599,9 +1600,73 @@
       </div>
     </footer>
     <!-- ...::: End Footer Section :::... -->
+     
 
     <!-- material-scrolltop button -->
-    <button class="material-scrolltop" type="button"></button>
+    <!-- <button class="material-scrolltop" type="button"></button> -->
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+      <!-- Chat Label -->
+      <div class="chat-label" id="chatLabel">
+        <span>Chat with AI</span>
+        <div class="label-arrow"></div>
+      </div>
+      
+      <!-- Chat Icon -->
+      <div class="chat-icon" id="chatIcon">
+        <i class="icofont-comment"></i>
+        <div class="chat-notification">
+          <span>1</span>
+        </div>
+      </div>
+
+      <!-- Chat Modal -->
+      <div class="chat-modal" id="chatModal">
+        <div class="chat-modal-content">
+          <!-- Chat Header -->
+          <div class="chat-header">
+            <div class="chat-header-info">
+              <div class="chat-avatar">
+                <img src="assets/images/bg/profilePic.png" alt="Rashid Yousufzai" />
+              </div>
+              <div class="chat-user-info">
+                <h5>Rashid Yousufzai</h5>
+                <span class="status online">Online</span>
+              </div>
+            </div>
+            <div class="chat-actions">
+              <button class="chat-minimize" id="chatMinimize">
+                <i class="icofont-minus"></i>
+              </button>
+              <button class="chat-close" id="chatClose">
+                <i class="icofont-close-line"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Chat Messages -->
+          <div class="chat-messages" id="chatMessages">
+            <div class="message received">
+              <div class="message-content">
+                <p>Hello! 👋 I'm Rashid, a Full Stack Developer. You can chat with me or ask questions about AI/ML development, MERN stack, and more! How can I help you today?</p>
+                <span class="message-time">Just now</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat Input -->
+          <div class="chat-input">
+            <div class="input-group">
+              <input type="text" id="messageInput" placeholder="Ask me anything about AI, MERN stack, or development..." />
+              <button class="send-btn" id="sendMessage">
+                <i class="icofont-send-mail"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- Global Vendor, plugins JS -->
@@ -1630,6 +1695,9 @@
   <!-- Minify Version -->
   <script src="assets/js/vendor.min.js"></script>
   <script src="assets/js/plugins.min.js"></script>
+
+  <!-- Markdown Parser -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <!--Main JS (Common Activation Codes)-->
   <script src="assets/js/main.js"></script>

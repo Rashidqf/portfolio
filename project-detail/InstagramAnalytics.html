@@ -502,8 +502,53 @@
         </footer>
 
         <!-- material-scrolltop button -->
-        <button class="material-scrolltop" type="button"></button>
+        <!-- <button class="material-scrolltop" type="button"></button> -->
     </main>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+      <div class="chat-label" id="chatLabel">
+        <span>Chat with AI</span>
+        <div class="label-arrow"></div>
+      </div>
+      <div class="chat-icon" id="chatIcon">
+        <i class="icofont-comment"></i>
+        <div class="chat-notification"><span>1</span></div>
+      </div>
+      <div class="chat-modal" id="chatModal">
+        <div class="chat-modal-content">
+          <div class="chat-header">
+            <div class="chat-header-info">
+              <div class="chat-avatar">
+                <img src="../assets/images/bg/profilePic.png" alt="Rashid Yousufzai" />
+              </div>
+              <div class="chat-user-info">
+                <h5>Rashid Yousufzai</h5>
+                <span class="status online">Online</span>
+              </div>
+            </div>
+            <div class="chat-actions">
+              <button class="chat-minimize" id="chatMinimize"><i class="icofont-minus"></i></button>
+              <button class="chat-close" id="chatClose"><i class="icofont-close-line"></i></button>
+            </div>
+          </div>
+          <div class="chat-messages" id="chatMessages">
+            <div class="message received">
+              <div class="message-content">
+                <p>Hello! 👋 I'm Rashid, a Full Stack Developer. You can chat with me or ask questions about AI/ML development, MERN stack, and more! How can I help you today?</p>
+                <span class="message-time">Just now</span>
+              </div>
+            </div>
+          </div>
+          <div class="chat-input">
+            <div class="input-group">
+              <input type="text" id="messageInput" placeholder="Ask me anything about AI, MERN stack, or development..." />
+              <button class="send-btn" id="sendMessage"><i class="icofont-send-mail"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Global Vendor, plugins JS -->
 
@@ -511,32 +556,14 @@
     ============================================ -->
     <!-- Global Vendor, plugins JS -->
 
-    <!-- Vendor JS -->
-    <!-- <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
-    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script> -->
-    
-    <!--Plugins JS-->
-    <!-- <script src="assets/js/plugins/swiper-bundle.min.js"></script>
-    <script src="assets/js/plugins/jquery.appear.min.js"></script>
-    <script src="assets/js/plugins/venobox.min.js"></script>
-    <script src="assets/js/plugins/jquery.waypoints.js"></script>
-    <script src="assets/js/plugins/images-loaded.min.js"></script>
-    <script src="assets/js/plugins/isotope.pkgd.min.js"></script>
-    <script src="assets/js/plugins/counter.js"></script>
-    <script src="assets/js/plugins/ajax-mail.js"></script>
-    <script src="assets/js/plugins/material-scrolltop.js"></script> -->
-
     <!-- Minify Version -->
     <script src="../assets/js/vendor.min.js"></script>
     <script src="../assets/js/plugins.min.js"></script>
 
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
     <!--Main JS (Common Activation Codes)-->
     <script src="../assets/js/main.js"></script>
-
-</body>
-
-
-
+  </body>
 </html>

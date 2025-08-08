@@ -5080,6 +5080,7 @@ p:last-child {
   opacity: 1;
   visibility: visible;
   transform: translateY(0) scale(1);
+  height: 75vh;
 }
 
 .chat-modal-content {

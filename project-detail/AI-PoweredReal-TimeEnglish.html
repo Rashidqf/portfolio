@@ -58,6 +58,21 @@
     <link rel="stylesheet" href="../assets/css/plugins/plugins.min.css">
     <link rel="stylesheet" href="../assets/css/style.min.css">
 
+    <style>
+        /* Ensure all project detail slider images use the same dimensions */
+        .project-details-slider .swiper-container { width: 100%; }
+        .project-details-slider .swiper-slide {
+            aspect-ratio: 16 / 9;
+            width: 100%;
+        }
+        .project-details-slider .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+
     <!-- Enhanced Structured Data for SEO -->
     <script type="application/ld+json">
     {
@@ -167,6 +182,7 @@
                                 <li><a href="../index.html">Home</a></li>
                                 <li><a href="../project-list.html">Projects</a></li>
                                 <li><a href="../contact.html">Contact Us</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
                             </ul>
                             <!-- End Header Menu -->
                         </div>
@@ -227,6 +243,9 @@
                             <li>
                                 <a href="../contact.html"><span>Contact</span></a>
                             </li>
+                            <li>
+                                <a href="../blog.html">Blog</a>
+                            </li>
                         </ul>
                     </div>
                     <!-- End Mobile Menu Nav -->
@@ -266,9 +285,37 @@
                             <!-- Start Project Content Section -->
                             <div class="project-content-section pos-relative">
                                 <div class="project-hero-image">
-                                    <img src="../assets/images/project/project-details-hero-img.jpg"
-                                        alt="SpeakSmart - AI-Powered Real-Time English Conversation Platform showing interactive conversation interface with OpenAI integration"
-                                        width="800" height="600" loading="lazy">
+                                    <div class="project-details-slider">
+                                        <div class="swiper-container">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <img src="../assets/project/ai-powered/ai-powered-english-conversation-01.png"
+                                                         alt="SpeakSmart real-time English conversation UI – main dashboard view"
+                                                         width="1200" height="675">
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="../assets/project/ai-powered/ai-powered-english-conversation-02.png"
+                                                         alt="SpeakSmart voice interaction – microphone controls and live transcript"
+                                                         width="1200" height="675" loading="lazy">
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="../assets/project/ai-powered/ai-powered-english-conversation-03.png"
+                                                         alt="SpeakSmart AI reply – natural TTS response with conversation context"
+                                                         width="1200" height="675" loading="lazy">
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="../assets/project/ai-powered/ai-powered-english-conversation-04.png"
+                                                         alt="SpeakSmart session summary – transcript and performance highlights"
+                                                         width="1200" height="675" loading="lazy">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-pagination"></div>
+                                            <div class="project-details-slider-nav default-nav-style">
+                                                <div class="slider-button button-prev"><i class="icofont-double-left"></i></div>
+                                                <div class="slider-button button-next"><i class="icofont-double-right"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="row">
@@ -457,7 +504,7 @@
                                                 <!-- Start Project Single Box -->
                                                 <li class="project-sidebar-single-box">
                                                     <h6 class="title-text">Project Name:</h6>
-                                                    <span class="text">SpeakSmart - AI-Powered Real-Time English</span>
+                                                    <span class="text">SpeakSmart</span>
                                                 </li>
                                                 <!-- End Project Single Box -->
                                                 <!-- Start Project Single Box -->

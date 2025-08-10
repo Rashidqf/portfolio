@@ -210,6 +210,29 @@
         }
       });
 
+   /****************************************
+    *  Project Details Slider (per-project pages)
+    *****************************************/
+    var project_details_slider = new Swiper('.project-details-slider .swiper-container', {
+        slidesPerView: 1,
+        loop: true,
+        speed: 900,
+        spaceBetween: 16,
+        effect: 'slide',
+        pagination: {
+            el: '.project-details-slider .swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.project-details-slider .button-next',
+            prevEl: '.project-details-slider .button-prev',
+        },
+        preloadImages: false,
+        lazy: {
+            loadPrevNext: true,
+        },
+    });
+
       
     /************************************************
      * Counter Up
@@ -271,6 +294,31 @@
         const sendMessage = document.getElementById('sendMessage');
         const chatMessages = document.getElementById('chatMessages');
         const chatNotification = document.querySelector('.chat-notification');
+
+        // Website links configuration and sitemap support
+        const SITE_BASE = 'https://rashidyousufzai.netlify.app';
+        const defaultLinks = {
+            home: SITE_BASE + '/',
+            contact: SITE_BASE + '/contact',
+            projectList: SITE_BASE + '/project-list',
+            resume: SITE_BASE + '/assets/Rashidmern.pdf'
+        };
+        let sitemapLinks = [];
+        // Try to load links from on-site sitemap.xml (same-origin)
+        try {
+            fetch('/sitemap.xml')
+                .then(function(res) { return res.ok ? res.text() : ''; })
+                .then(function(xmlText) {
+                    if (!xmlText) return;
+                    var parser = new DOMParser();
+                    var doc = parser.parseFromString(xmlText, 'application/xml');
+                    var locs = doc.getElementsByTagName('loc');
+                    sitemapLinks = Array.prototype.map.call(locs, function(node) {
+                        return (node.textContent || '').trim();
+                    }).filter(Boolean);
+                })
+                .catch(function(){ /* ignore */ });
+        } catch(_) { /* ignore */ }
 
         // AI API Configuration - Using Netlify Function for security
         const AI_API_URL = '/.netlify/functions/ai-chat';
@@ -515,7 +563,14 @@ IMPORTANT: Always format your responses using markdown syntax. Use:
 - \`\`\` for code blocks
 - - for bullet points
 - ### for section headers
-- [link text](url) for links
+                - [link text](url) for links
+
+Additionally: When a user asks for details or next steps, append a short "Useful links" section with relevant links from this website. Prefer these canonical URLs:
+- Home: ${SITE_BASE}/
+- Contact: ${defaultLinks.contact}
+- Projects: ${defaultLinks.projectList}
+- Resume: ${defaultLinks.resume}
+Include only links that are relevant to the question, and keep them concise.
 
 Answer every user question as if you are Rashid, using only the information above unless asked for general knowledge. Be helpful, professional, and conversational. Keep responses concise but informative. Always use markdown formatting to make responses more readable and professional.`;
 
@@ -587,10 +642,45 @@ Answer every user question as if you are Rashid, using only the information abov
                 
                 // Render markdown to HTML
                 const renderedResponse = marked.parse(aiResponse);
+
+                // Build useful links section based on the last user message intent
+                function getRelevantLinks(message) {
+                    var links = [];
+                    var m = (message || '').toLowerCase();
+                    // Contact intent
+                    if (/(contact|reach|email|phone|call|whatsapp)/i.test(message)) {
+                        var contactFromSitemap = (sitemapLinks || []).find(function(l){
+                            try { return /\/contact\/?$/.test(new URL(l, SITE_BASE).pathname); } catch(_) { return false; }
+                        });
+                        links.push({ label: 'Contact', url: contactFromSitemap || defaultLinks.contact });
+                    }
+                    // Projects intent
+                    if (/(project|portfolio|work|case\s*stud(y|ies))/i.test(message)) {
+                        var projectsFromSitemap = (sitemapLinks || []).find(function(l){
+                            try { return /\/project-list\/?$/.test(new URL(l, SITE_BASE).pathname); } catch(_) { return false; }
+                        });
+                        links.push({ label: 'Projects', url: projectsFromSitemap || defaultLinks.projectList });
+                    }
+                    // Resume intent
+                    if (/(resume|cv|curriculum\s*vitae|download)/i.test(message)) {
+                        var resumeFromSitemap = (sitemapLinks || []).find(function(l){
+                            try { return /\/assets\/Rashidmern\.pdf$/.test(new URL(l, SITE_BASE).pathname); } catch(_) { return false; }
+                        });
+                        links.push({ label: 'Resume (PDF)', url: resumeFromSitemap || defaultLinks.resume });
+                    }
+                    return links;
+                }
+                var usefulLinks = getRelevantLinks(userMessage);
+                var linksSection = '';
+                if (usefulLinks.length) {
+                    var items = usefulLinks.map(function(li){ return '<li><a href="' + li.url + '" target="_blank" rel="noopener">' + li.label + '</a></li>'; }).join('');
+                    linksSection = '<div class="message-links"><strong>Useful links</strong><ul>' + items + '</ul></div>';
+                }
                 
                 messageElement.innerHTML = `
                     <div class="message-content">
                         <div class="markdown-content">${renderedResponse}</div>
+                        ${linksSection}
                         <span class="message-time">${getCurrentTime()}</span>
                     </div>
                 `;

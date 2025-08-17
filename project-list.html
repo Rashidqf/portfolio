@@ -70,6 +70,92 @@
       }
     }
     </script>
+    
+    <!-- Custom styles for project links -->
+    <style>
+      .project-links {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #eee;
+      }
+      
+      .project-links .btn {
+        font-size: 12px;
+        padding: 5px 12px;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      
+      .project-links .btn-outline-primary {
+        color: #007bff;
+        border-color: #007bff;
+      }
+      
+      .project-links .btn-outline-primary:hover {
+        background-color: #007bff;
+        color: white;
+      }
+      
+      .project-links .btn-outline-success {
+        color: #28a745;
+        border-color: #28a745;
+      }
+      
+      .project-links .btn-outline-success:hover {
+        background-color: #28a745;
+        color: white;
+      }
+      
+      .project-links .btn-outline-secondary {
+        color: #6c757d;
+        border-color: #6c757d;
+      }
+      
+      .project-links .btn-outline-secondary:hover {
+        background-color: #6c757d;
+        color: white;
+      }
+      
+      .project-links .btn i {
+        margin-right: 5px;
+      }
+      
+      /* Private Project Modal Styling */
+      .modal-content {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      }
+      
+      .modal-header {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-bottom: 1px solid #dee2e6;
+        border-radius: 15px 15px 0 0;
+      }
+      
+      .modal-title {
+        font-weight: 600;
+        color: #495057;
+      }
+      
+      .modal-body {
+        padding: 2rem;
+      }
+      
+      .modal-footer {
+        border-top: 1px solid #dee2e6;
+        background-color: #f8f9fa;
+        border-radius: 0 0 15px 15px;
+      }
+      
+      .alert-info {
+        background-color: #e7f3ff;
+        border-color: #b8daff;
+        color: #004085;
+        border-radius: 8px;
+      }
+    </style>
   </head>
 
   <body>
@@ -287,19 +373,24 @@
                           <li><a href="#">Python</a></li>
                           <li><a href="#">Selenium</a></li>
                         </ul>
+                        <div class="project-links mt-3">
+                          <a href="https://github.com/Rashidqf/Trading-Automation" target="_blank" class="btn btn-sm btn-outline-primary me-2">
+                            <i class="icofont-github"></i> GitHub
+                          </a>
+                        </div>
                       </div>
                     </div>
                     <!-- End Project Box Single Item -->
                   </div>
 
                   <!-- AI/ML Projects (JavaScript-based) -->
-                  <div class="col-md-6 filter-item ai-ml mern">
+                  <div class="col-md-6 filter-item ai-ml mern python">
                     <!-- Start Project Box Single Item -->
                     <div class="project-box-single-item swiper-slide" style="cursor: pointer;" onclick="window.location.href='project-detail/AI-PoweredReal-TimeEnglish.html'">
                       <div class="img-box">
                         <div class="bg-overlay"></div>
                         <div class="bg-image">
-                          <img src="assets/project/ai-powered/projectBanner.png" alt="SpeakSmart - AI English Learning" />
+                          <img src="assets/project/ai-powered/background.png" alt="SpeakSmart - AI English Learning" />
                         </div>
                         <div class="image">
                           <img src="assets/project/ai-powered/projectBanner.png" alt="SpeakSmart - AI English Learning" />
@@ -315,21 +406,26 @@
                           <li><a href="#">OpenAI API</a></li>
                           <li><a href="#">Flask</a></li>
                         </ul>
+                        <div class="project-links mt-3">
+                          <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#privateProjectModal">
+                            <i class="icofont-lock"></i> Private Project
+                          </button>
+                        </div>
                       </div>
                     </div>
                     <!-- End Project Box Single Item -->
                   </div>
 
-                  <div class="col-md-6 filter-item ai-ml mern">
+                  <div class="col-md-6 filter-item ai-ml mern python">
                     <!-- Start Project Box Single Item -->
                     <div class="project-box-single-item swiper-slide" style="cursor: pointer;" onclick="window.location.href='project-detail/PocketCoachAI.html'">
                       <div class="img-box">
                         <div class="bg-overlay"></div>
                         <div class="bg-image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="Pocket Coach AI - Business Development" />
+                          <img src="assets/images/project/pocketcoachai.png" alt="Pocket Coach AI - Business Development" />
                         </div>
                         <div class="image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="Pocket Coach AI - Business Development" />
+                          <img src="assets/images/project/pocketcoachai.png" alt="Pocket Coach AI - Business Development" />
                         </div>
                       </div>
                       <div class="content">
@@ -342,21 +438,26 @@
                           <li><a href="#">OpenAI API</a></li>
                           <li><a href="#">MongoDB</a></li>
                         </ul>
+                        <div class="project-links mt-3">
+                          <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#privateProjectModal">
+                            <i class="icofont-lock"></i> Private Project
+                          </button>
+                        </div>
                       </div>
                     </div>
                     <!-- End Project Box Single Item -->
                   </div>
 
-                  <div class="col-md-6 filter-item ai-ml">
+                  <div class="col-md-6 filter-item ai-ml python">
                     <!-- Start Project Box Single Item -->
                     <div class="project-box-single-item swiper-slide" style="cursor: pointer;" onclick="window.location.href='project-detail/AIPoweredRecruitmentAutomation.html'">
                       <div class="img-box">
                         <div class="bg-overlay"></div>
                         <div class="bg-image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="AI Powered Recruitment Automation" />
+                          <img src="assets/images/project/AI middleware.png" alt="AI Powered Recruitment Automation" />
                         </div>
                         <div class="image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="AI Powered Recruitment Automation" />
+                          <img src="assets/images/project/AI middleware.png" alt="AI Powered Recruitment Automation" />
                         </div>
                       </div>
                       <div class="content">
@@ -369,6 +470,11 @@
                           <li><a href="#">FastAPI</a></li>
                           <li><a href="#">Azure OpenAI</a></li>
                         </ul>
+                        <div class="project-links mt-3">
+                          <a href="https://github.com/Rashidqf/open-ai-and-salesforce-integration" target="_blank" class="btn btn-sm btn-outline-primary me-2">
+                            <i class="icofont-github"></i> GitHub
+                          </a>
+                        </div>
                       </div>
                     </div>
                     <!-- End Project Box Single Item -->
@@ -380,10 +486,10 @@
                       <div class="img-box">
                         <div class="bg-overlay"></div>
                         <div class="bg-image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="Instagram Analytics Dashboard" />
+                          <img src="assets/images/project/instagram Analytics.png" alt="Instagram Analytics Dashboard" />
                         </div>
                         <div class="image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="Instagram Analytics Dashboard" />
+                          <img src="assets/images/project/instagram Analytics.png" alt="Instagram Analytics Dashboard" />
                         </div>
                       </div>
                       <div class="content">
@@ -396,6 +502,11 @@
                           <li><a href="#">Node.js</a></li>
                           <li><a href="#">Instagram API</a></li>
                         </ul>
+                        <div class="project-links mt-3">
+                          <a href="https://github.com/Rashidqf/Instagram-Analytics" target="_blank" class="btn btn-sm btn-outline-primary me-2">
+                            <i class="icofont-github"></i> GitHub
+                          </a>
+                        </div>
                       </div>
                     </div>
                     <!-- End Project Box Single Item -->
@@ -408,10 +519,10 @@
                       <div class="img-box">
                         <div class="bg-overlay"></div>
                         <div class="bg-image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="Daylily 3D AI Sales Assistant" />
+                          <img src="assets/images/project/Daylily.png" alt="Daylily 3D AI Sales Assistant" />
                         </div>
                         <div class="image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="Daylily 3D AI Sales Assistant" />
+                          <img src="assets/images/project/Daylily.png" alt="Daylily 3D AI Sales Assistant" />
                         </div>
                       </div>
                       <div class="content">
@@ -424,6 +535,11 @@
                           <li><a href="#">Langbase</a></li>
                           <li><a href="#">Heygen</a></li>
                         </ul>
+                        <div class="project-links mt-3">
+                          <a href="https://github.com/Rashidqf/shopify-app-heygen-ai-assistant" target="_blank" class="btn btn-sm btn-outline-primary me-2">
+                            <i class="icofont-github"></i> GitHub
+                          </a>
+                        </div>
                       </div>
                     </div>
                     <!-- End Project Box Single Item -->
@@ -451,6 +567,11 @@
                           <li><a href="#">Three.js</a></li>
                           <li><a href="#">PostgreSQL</a></li>
                         </ul>
+                        <div class="project-links mt-3">
+                          <a href="https://github.com/rashidyousufzai/custom-bead-designer" target="_blank" class="btn btn-sm btn-outline-primary me-2">
+                            <i class="icofont-github"></i> GitHub
+                          </a>
+                        </div>
                       </div>
                     </div>
                     <!-- End Project Box Single Item -->
@@ -462,10 +583,10 @@
                       <div class="img-box">
                         <div class="bg-overlay"></div>
                         <div class="bg-image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="Shopify AI Product Designer" />
+                          <img src="assets/images/project/product designer.png" alt="Shopify AI Product Designer" />
                         </div>
                         <div class="image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="Shopify AI Product Designer" />
+                          <img src="assets/images/project/product designer.png" alt="Shopify AI Product Designer" />
                         </div>
                       </div>
                       <div class="content">
@@ -478,92 +599,17 @@
                           <li><a href="#">DALL-E 3</a></li>
                           <li><a href="#">TypeScript</a></li>
                         </ul>
+                        <div class="project-links mt-3">
+                          <a href="https://github.com/rashidyousufzai/ai-product-designer" target="_blank" class="btn btn-sm btn-outline-primary me-2">
+                            <i class="icofont-github"></i> GitHub
+                          </a>
+                        </div>
                       </div>
                     </div>
                     <!-- End Project Box Single Item -->
                   </div>
 
-                  <!-- Python Projects (Second Priority) -->
-                  <div class="col-md-6 filter-item python">
-                    <!-- Start Project Box Single Item -->
-                    <div class="project-box-single-item swiper-slide" style="cursor: pointer;" onclick="window.location.href='#'">
-                      <div class="img-box">
-                        <div class="bg-overlay"></div>
-                        <div class="bg-image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="Python Trading Bot" />
-                        </div>
-                        <div class="image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="Python Trading Bot" />
-                        </div>
-                      </div>
-                      <div class="content">
-                        <h4 class="title">
-                          <a href="#">Trading Bot</a>
-                        </h4>
-                        <p class="description">Automated trading bot with machine learning algorithms</p>
-                        <ul class="catagory-nav-item">
-                          <li><a href="#">Python</a></li>
-                          <li><a href="#">Selenium</a></li>
-                          <li><a href="#">Pandas</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- End Project Box Single Item -->
-                  </div>
 
-                  <div class="col-md-6 filter-item python">
-                    <!-- Start Project Box Single Item -->
-                    <div class="project-box-single-item swiper-slide" style="cursor: pointer;" onclick="window.location.href='#'">
-                      <div class="img-box">
-                        <div class="bg-overlay"></div>
-                        <div class="bg-image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="Data Analysis Tool" />
-                        </div>
-                        <div class="image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="Data Analysis Tool" />
-                        </div>
-                      </div>
-                      <div class="content">
-                        <h4 class="title">
-                          <a href="#">Data Analysis Tool</a>
-                        </h4>
-                        <p class="description">Advanced data analysis and visualization platform</p>
-                        <ul class="catagory-nav-item">
-                          <li><a href="#">Python</a></li>
-                          <li><a href="#">NumPy</a></li>
-                          <li><a href="#">Matplotlib</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- End Project Box Single Item -->
-                  </div>
-
-                  <div class="col-md-6 filter-item python">
-                    <!-- Start Project Box Single Item -->
-                    <div class="project-box-single-item swiper-slide" style="cursor: pointer;" onclick="window.location.href='#'">
-                      <div class="img-box">
-                        <div class="bg-overlay"></div>
-                        <div class="bg-image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="Web Scraping Tool" />
-                        </div>
-                        <div class="image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="Web Scraping Tool" />
-                        </div>
-                      </div>
-                      <div class="content">
-                        <h4 class="title">
-                          <a href="#">Web Scraping Tool</a>
-                        </h4>
-                        <p class="description">Automated web scraping and data extraction tool</p>
-                        <ul class="catagory-nav-item">
-                          <li><a href="#">Python</a></li>
-                          <li><a href="#">BeautifulSoup</a></li>
-                          <li><a href="#">Requests</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- End Project Box Single Item -->
-                  </div>
 
                   <div class="col-md-6 filter-item mern">
                     <!-- Start Project Box Single Item -->
@@ -571,22 +617,28 @@
                       <div class="img-box">
                         <div class="bg-overlay"></div>
                         <div class="bg-image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="Dynamic News Web Application" />
+                          <img src="assets/images/project/News App.png" alt="Dynamic News Web Application" />
                         </div>
                         <div class="image">
-                          <img src="assets/images/project/project-details-hero-img.jpg" alt="Dynamic News Web Application" />
+                          <img src="assets/images/project/News App.png" alt="Dynamic News Web Application" />
                         </div>
                       </div>
                       <div class="content">
                         <h4 class="title">
                           <a href="project-detail/NewsWebApplication.html">Dynamic News Web Application</a>
                         </h4>
-                        <p class="description">Comprehensive news platform with multilingual support and admin dashboard</p>
+                        <p class="description">Comprehensive news platform with multilingual support and admin</p>
                         <ul class="catagory-nav-item">
-                          <li><a href="#">Python</a></li>
-                          <li><a href="#">Django</a></li>
-                          <li><a href="#">PostgreSQL</a></li>
+                          <li><a href="#">Node.js</a></li>
+                          <li><a href="#">Express.js</a></li>
+                          <li><a href="#">MongoDB</a></li>
+                          <li><a href="#">React.js</a></li>
                         </ul>
+                        <div class="project-links mt-3">
+                          <a href="https://github.com/rashidyousufzai/news-web-application" target="_blank" class="btn btn-sm btn-outline-primary me-2">
+                            <i class="icofont-github"></i> GitHub
+                          </a>
+                        </div>
                       </div>
                     </div>
                     <!-- End Project Box Single Item -->
@@ -621,6 +673,11 @@
                           <li><a href="#">MySQL</a></li>
                           <li><a href="#">PHP</a></li>
                         </ul>
+                        <div class="project-links mt-3">
+                          <a href="https://github.com/rashidyousufzai/custom-patches-laravel" target="_blank" class="btn btn-sm btn-outline-primary me-2">
+                            <i class="icofont-github"></i> GitHub
+                          </a>
+                        </div>
                       </div>
                     </div>
                     <!-- End Project Box Single Item -->
@@ -653,6 +710,14 @@
                           <li><a href="#">Laravel</a></li>
                           <li><a href="#">MySQL</a></li>
                         </ul>
+                        <div class="project-links mt-3">
+                          <a href="https://github.com/rashidyousufzai/digital-patches-laravel" target="_blank" class="btn btn-sm btn-outline-primary me-2">
+                            <i class="icofont-github"></i> GitHub
+                          </a>
+                          <a href="https://embroiderypatch.ca" target="_blank" class="btn btn-sm btn-outline-success">
+                            <i class="icofont-external-link"></i> Live Demo
+                          </a>
+                        </div>
                       </div>
                     </div>
                     <!-- End Project Box Single Item -->
@@ -685,6 +750,14 @@
                           <li><a href="#">Laravel</a></li>
                           <li><a href="#">MySQL</a></li>
                         </ul>
+                        <div class="project-links mt-3">
+                          <a href="https://github.com/rashidyousufzai/online-book-service-laravel" target="_blank" class="btn btn-sm btn-outline-primary me-2">
+                            <i class="icofont-github"></i> GitHub
+                          </a>
+                          <a href="https://gulfebookwriter.com/" target="_blank" class="btn btn-sm btn-outline-success">
+                            <i class="icofont-external-link"></i> Live Demo
+                          </a>
+                        </div>
                       </div>
                     </div>
                     <!-- End Project Box Single Item -->
@@ -718,6 +791,14 @@
                           <li><a href="#">WordPress</a></li>
                           <li><a href="#">Elementor</a></li>
                         </ul>
+                        <div class="project-links mt-3">
+                          <a href="https://github.com/rashidyousufzai/hoor-fashion-wordpress" target="_blank" class="btn btn-sm btn-outline-primary me-2">
+                            <i class="icofont-github"></i> GitHub
+                          </a>
+                          <a href="https://www.hoorfashion.com.pk/" target="_blank" class="btn btn-sm btn-outline-success">
+                            <i class="icofont-external-link"></i> Live Demo
+                          </a>
+                        </div>
                       </div>
                     </div>
                     <!-- End Project Box Single Item -->
@@ -944,6 +1025,46 @@
           </div>
         </div>
       </div>
+      
+      <!-- Private Project Modal -->
+      <div class="modal fade" id="privateProjectModal" tabindex="-1" aria-labelledby="privateProjectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="privateProjectModalLabel">
+                <i class="icofont-lock text-warning me-2"></i>
+                Private Client Project
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="text-center mb-3">
+                <i class="icofont-shield-alt text-warning" style="font-size: 3rem;"></i>
+              </div>
+              <p class="text-center mb-3">
+                <strong>This is a confidential client project.</strong>
+              </p>
+              <p class="text-muted text-center">
+                I respect client privacy and confidentiality agreements. The source code for this project cannot be shared publicly. However, you can view the project details and case study to understand the technologies and solutions implemented.
+              </p>
+              <div class="alert alert-info mt-3">
+                <i class="icofont-info-circle me-2"></i>
+                <strong>Interested in similar work?</strong> Feel free to contact me to discuss your project requirements!
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                <i class="icofont-close-line me-1"></i>
+                Close
+              </button>
+              <a href="contact.html" class="btn btn-primary">
+                <i class="icofont-envelope me-1"></i>
+                Contact Me
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Global Vendor, plugins JS -->
@@ -961,5 +1082,18 @@
 
     <!--Main JS (Common Activation Codes)-->
     <script src="assets/js/main.js"></script>
+    
+    <!-- Fix GitHub button click events -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Prevent project links from triggering parent container clicks
+        const projectLinks = document.querySelectorAll('.project-links a, .project-links button');
+        projectLinks.forEach(function(link) {
+          link.addEventListener('click', function(event) {
+            event.stopPropagation();
+          });
+        });
+      });
+    </script>
   </body>
 </html>

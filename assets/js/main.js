@@ -479,7 +479,7 @@
             ],
             social_links: {
                 facebook: "https://www.facebook.com/RashidYousufZa/",
-                github: "https://github.com/rashidyousufzai",
+                github: "https://github.com/Rashidqf",
                 linkedin: "https://www.linkedin.com/in/rashidyousufzai/",
                 instagram: "https://www.instagram.com/rashid.yousufzai/",
                 twitter: "https://x.com/RashidYousufZa3"

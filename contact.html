@@ -47,6 +47,146 @@
   <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
   <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
   <link rel="stylesheet" href="assets/css/style.min.css">
+  
+  <!-- Custom Contact Form Styles -->
+  <style>
+    /* Form validation styles */
+    .default-form-group input.error,
+    .default-form-group textarea.error {
+      border-color: #dc3545;
+      box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }
+    
+    .field-error {
+      margin-top: 5px;
+    }
+    
+    .field-error small {
+      color: #dc3545;
+      font-size: 12px;
+    }
+    
+    /* Form message styles */
+    .form-messege {
+      margin-top: 20px;
+    }
+    
+    .form-messege .alert {
+      padding: 15px 20px;
+      border-radius: 5px;
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .form-messege .alert-success {
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+      color: #155724;
+    }
+    
+    .form-messege .alert-danger {
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+      color: #721c24;
+    }
+    
+    .form-messege .alert i {
+      font-size: 18px;
+    }
+    
+    /* Loading state */
+    .btn:disabled {
+      opacity: 0.8;
+      cursor: not-allowed;
+      position: relative;
+    }
+    
+    .btn.loading {
+      color: transparent !important;
+    }
+    
+    .btn.loading::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 50%;
+      margin-left: -10px;
+      margin-top: -10px;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      border-top-color: transparent;
+      animation: spin 1s linear infinite;
+    }
+    
+    .icofont-spinner-alt-2 {
+      animation: spin 1s linear infinite;
+      display: inline-block;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Form overlay during submission */
+    .contact-form-box {
+      position: relative;
+    }
+    
+    .form-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      border-radius: 5px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .form-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .form-overlay .loading-content {
+      text-align: center;
+      color: #333;
+    }
+    
+    .form-overlay .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #007bff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 15px;
+    }
+    
+    .form-overlay .loading-text {
+      font-size: 16px;
+      font-weight: 500;
+    }
+    
+    /* Focus states */
+    .default-form-group input:focus,
+    .default-form-group textarea:focus {
+      border-color: #007bff;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+  </style>
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:type" content="website" />
@@ -273,7 +413,7 @@
                     <!-- Start contact Single Box -->
                     <li class="contact-sidebar-single-box">
                       <h6 class="title-text">Website:</h6>
-                      <a href="https://rashidkhan.netlify.app" class="link">rashidkhan.netlify.app</a>
+                      <a href="https://rashidyousufzai.netlify.app" class="link">rashidyousufzai.netlify.app</a>
                     </li>
                     <!-- End contact Single Box -->
                     <!-- Start contact Single Box -->
@@ -291,7 +431,7 @@
                   <ul class="social-link">
                     <li><a href="https://www.facebook.com/RashidYousufZa/" target="_blank"><i
                           class="icofont-facebook"></i></a></li>
-                    <li><a href="https://github.com/rashidyousufzai" target="_blank"><i class="icofont-github"></i></a>
+                    <li><a href="https://github.com/Rashidqf" target="_blank"><i class="icofont-github"></i></a>
                     </li>
                     <li><a href="https://www.linkedin.com/in/rashidyousufzai/" target="_blank"><i
                           class="icofont-linkedin"></i></a></li>
@@ -312,8 +452,15 @@
 
                 <!-- Start Contact Form Box -->
                 <div class="contact-form-box">
-                  <form id="contact-form" class="default-form contact-form"
-                    action="https://whizthemes.com/mail-php/jaber/contact.php" method="post">
+                  <!-- Loading Overlay -->
+                  <div class="form-overlay" id="formOverlay">
+                    <div class="loading-content">
+                      <div class="loading-spinner"></div>
+                      <div class="loading-text">Sending your message...</div>
+                    </div>
+                  </div>
+                  
+                  <form id="contact-form" class="default-form contact-form">
                     <div class="row mb-n6">
                       <div class="col-xl-6 mb-6">
                         <div class="default-form-group">
@@ -344,6 +491,7 @@
                         <div class="default-form-group tex-center">
                           <button type="submit" class="btn btn-lg btn-outline-one">Submit Message</button>
                         </div>
+
                       </div>
                       <p class="form-messege"></p>
                     </div>
@@ -387,7 +535,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="https://github.com/rashidyousufzai" target="_blank" class="social-link-item">
+                      <a href="https://github.com/Rashidqf" target="_blank" class="social-link-item">
                         <i class="icofont-github"></i>
                       </a>
                     </li>
@@ -600,14 +748,214 @@
   <script src="assets/js/vendor.min.js"></script>
   <script src="assets/js/plugins.min.js"></script>
 
+  <!-- EmailJS CDN -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
   <!-- Markdown Parser -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <!--Main JS (Common Activation Codes)-->
   <script src="assets/js/main.js"></script>
+  
+  <!-- Contact Form Handler -->
+  <script>
+    // Initialize EmailJS
+    (function() {
+      // This should be your PUBLIC KEY, not your service ID
+      // You can find your public key in EmailJS dashboard → Account → API Keys
+      emailjs.init('qI_KZykJwHmNwH7SJ');
+    })();
+
+    // Contact form handler
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contact-form');
+      const formMessage = document.querySelector('.form-messege');
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const formOverlay = document.getElementById('formOverlay');
+      const originalBtnText = submitBtn.innerHTML;
+
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Show enhanced loading state
+        submitBtn.innerHTML = '<i class="icofont-spinner-alt-2"></i> Sending...';
+        submitBtn.disabled = true;
+        submitBtn.classList.add('loading');
+        
+        // Show form overlay
+        formOverlay.classList.add('active');
+        
+        // Clear previous messages
+        formMessage.innerHTML = '';
+        formMessage.className = 'form-messege';
+        
+        // Disable all form inputs
+        const formInputs = contactForm.querySelectorAll('input, textarea, button');
+        formInputs.forEach(input => input.disabled = true);
+
+        // Get form data
+        const formData = new FormData(contactForm);
+        const templateParams = {
+          from_name: formData.get('name'),
+          from_email: formData.get('email'),
+          phone: formData.get('phone'),
+          subject: formData.get('subject'),
+          message: formData.get('message'),
+          to_name: 'Rashid Yousufzai'
+        };
+
+        // Debug: Log template parameters
+        console.log('Sending email with parameters:', templateParams);
+        
+        // Send email using EmailJS
+        emailjs.send('service_ebvzcw8', 'template_ye1a2rk', templateParams)
+          .then(function(response) {
+            console.log('✅ EMAIL SENT SUCCESSFULLY!', response);
+            console.log('Response status:', response.status);
+            console.log('Response text:', response.text);
+            
+            // Hide loading overlay
+            formOverlay.classList.remove('active');
+            
+            // Show success message
+            formMessage.innerHTML = '<div class="alert alert-success"><i class="icofont-check-circled"></i> Thank you! Your message has been sent successfully. I\'ll get back to you soon.</div>';
+            formMessage.className = 'form-messege success';
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Reset button and enable all inputs
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('loading');
+            
+            // Re-enable all form inputs
+            const formInputs = contactForm.querySelectorAll('input, textarea, button');
+            formInputs.forEach(input => input.disabled = false);
+            
+          })
+          .catch(function(error) {
+            console.error('❌ EMAIL SENDING FAILED!');
+            console.error('Error details:', error);
+            console.error('Error status:', error.status);
+            console.error('Error text:', error.text);
+            console.error('Full error object:', JSON.stringify(error, null, 2));
+            
+            // More detailed error message based on error type
+            let errorMessage = 'Sorry! There was an error sending your message. ';
+            
+            if (error.status === 400) {
+              errorMessage += 'Invalid request - please check your input and try again.';
+            } else if (error.status === 401) {
+              errorMessage += 'Authentication failed - service configuration issue.';
+            } else if (error.status === 403) {
+              errorMessage += 'Access denied - please contact support.';
+            } else if (error.status === 404) {
+              errorMessage += 'Service not found - configuration issue.';
+            } else if (error.status >= 500) {
+              errorMessage += 'Server error - please try again later.';
+            } else {
+              errorMessage += 'Please try again or contact me directly.';
+            }
+            
+            // Show detailed error message
+            formMessage.innerHTML = `
+              <div class="alert alert-danger">
+                <i class="icofont-close-circled"></i> 
+                ${errorMessage}
+                <br><small style="margin-top: 10px; display: block;">
+                  Error Code: ${error.status || 'Unknown'} | 
+                  <a href="#" onclick="console.log('Full error:', ${JSON.stringify(error).replace(/"/g, '&quot;')}); return false;">
+                    Check browser console for details
+                  </a>
+                </small>
+              </div>
+            `;
+            formMessage.className = 'form-messege error';
+            
+            // Hide loading overlay
+            formOverlay.classList.remove('active');
+            
+            // Reset button and enable all inputs
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('loading');
+            
+            // Re-enable all form inputs
+            const formInputs = contactForm.querySelectorAll('input, textarea, button');
+            formInputs.forEach(input => input.disabled = false);
+          });
+      });
+
+      // Form validation
+      const inputs = contactForm.querySelectorAll('input, textarea');
+      inputs.forEach(input => {
+        input.addEventListener('blur', validateField);
+        input.addEventListener('input', clearFieldError);
+      });
+
+      function validateField(e) {
+        const field = e.target;
+        const value = field.value.trim();
+        
+        // Remove existing error styling
+        field.classList.remove('error');
+        
+        // Validate based on field type
+        if (field.hasAttribute('required') && !value) {
+          showFieldError(field, 'This field is required');
+          return false;
+        }
+        
+        if (field.type === 'email' && value) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(value)) {
+            showFieldError(field, 'Please enter a valid email address');
+            return false;
+          }
+        }
+        
+        if (field.type === 'tel' && value) {
+          const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
+          if (!phoneRegex.test(value)) {
+            showFieldError(field, 'Please enter a valid phone number');
+            return false;
+          }
+        }
+        
+        return true;
+      }
+
+      function showFieldError(field, message) {
+        field.classList.add('error');
+        
+        // Remove existing error message
+        const existingError = field.parentNode.querySelector('.field-error');
+        if (existingError) {
+          existingError.remove();
+        }
+        
+        // Add new error message
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'field-error';
+        errorDiv.innerHTML = `<small class="text-danger">${message}</small>`;
+        field.parentNode.appendChild(errorDiv);
+      }
+
+      function clearFieldError(e) {
+        const field = e.target;
+        field.classList.remove('error');
+        const errorDiv = field.parentNode.querySelector('.field-error');
+        if (errorDiv) {
+          errorDiv.remove();
+        }
+      }
+    });
+  </script>
 
 </body>
 
 
 
+</html>
 </html>

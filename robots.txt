@@ -33,6 +33,3 @@ Allow: /project-list.html
 Allow: /contact.html
 Allow: /about.html
 Allow: /assets/
-
-# Crawl delay (optional)
-Crawl-delay: 1 

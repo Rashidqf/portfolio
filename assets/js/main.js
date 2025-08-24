@@ -620,12 +620,7 @@ IMPORTANT: Always format your responses using markdown syntax. Use:
 - ### for section headers
                 - [link text](url) for links
 
-Additionally: When a user asks for details or next steps, append a short "Useful links" section with relevant links from this website. Prefer these canonical URLs:
-- Home: ${SITE_BASE}/
-- Contact: ${defaultLinks.contact}
-- Projects: ${defaultLinks.projectList}
-- Resume: ${defaultLinks.resume}
-Include only links that are relevant to the question, and keep them concise.
+Additionally: Keep responses concise and focused on the information requested. Do not include external links or URLs in your responses.
 
 Answer every user question as if you are Rashid, using only the information above unless asked for general knowledge. Be helpful, professional, and conversational. Keep responses concise but informative. Always use markdown formatting to make responses more readable and professional.`;
 
@@ -698,44 +693,9 @@ Answer every user question as if you are Rashid, using only the information abov
                 // Render markdown to HTML
                 const renderedResponse = marked.parse(aiResponse);
 
-                // Build useful links section based on the last user message intent
-                function getRelevantLinks(message) {
-                    var links = [];
-                    var m = (message || '').toLowerCase();
-                    // Contact intent
-                    if (/(contact|reach|email|phone|call|whatsapp)/i.test(message)) {
-                        var contactFromSitemap = (sitemapLinks || []).find(function(l){
-                            try { return /\/contact\/?$/.test(new URL(l, SITE_BASE).pathname); } catch(_) { return false; }
-                        });
-                        links.push({ label: 'Contact', url: contactFromSitemap || defaultLinks.contact });
-                    }
-                    // Projects intent
-                    if (/(project|portfolio|work|case\s*stud(y|ies))/i.test(message)) {
-                        var projectsFromSitemap = (sitemapLinks || []).find(function(l){
-                            try { return /\/project-list\/?$/.test(new URL(l, SITE_BASE).pathname); } catch(_) { return false; }
-                        });
-                        links.push({ label: 'Projects', url: projectsFromSitemap || defaultLinks.projectList });
-                    }
-                    // Resume intent
-                    if (/(resume|cv|curriculum\s*vitae|download)/i.test(message)) {
-                        var resumeFromSitemap = (sitemapLinks || []).find(function(l){
-                            try { return /\/assets\/Rashidmern\.pdf$/.test(new URL(l, SITE_BASE).pathname); } catch(_) { return false; }
-                        });
-                        links.push({ label: 'Resume (PDF)', url: resumeFromSitemap || defaultLinks.resume });
-                    }
-                    return links;
-                }
-                var usefulLinks = getRelevantLinks(userMessage);
-                var linksSection = '';
-                if (usefulLinks.length) {
-                    var items = usefulLinks.map(function(li){ return '<li><a href="' + li.url + '" target="_blank" rel="noopener">' + li.label + '</a></li>'; }).join('');
-                    linksSection = '<div class="message-links"><strong>Useful links</strong><ul>' + items + '</ul></div>';
-                }
-                
                 messageElement.innerHTML = `
                     <div class="message-content">
                         <div class="markdown-content">${renderedResponse}</div>
-                        ${linksSection}
                         <span class="message-time">${getCurrentTime()}</span>
                     </div>
                 `;

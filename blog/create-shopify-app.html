@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>How to Create a Shopify Remix App (Step-by-Step Guide) | Rashid Yousufzai</title>
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Learn how to create a modern Shopify app using Remix.js framework. Complete step-by-step guide with database setup, development server, and app installation process.">
+    <meta name="keywords" content="Shopify app development, Remix.js, Shopify Remix app, e-commerce development, full-stack web framework, server-side rendering, Shopify API, web development tutorial">
+    <meta name="author" content="Rashid Yousufzai">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="How to Create a Shopify Remix App (Step-by-Step Guide)">
+    <meta property="og:description" content="Learn how to create a modern Shopify app using Remix.js framework. Complete step-by-step guide with database setup, development server, and app installation process.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://rashidyousufzai.com/blog/create-shopify-app.html">
+    <meta property="og:image" content="https://rashidyousufzai.com/assets/blogs/shopify-create-app/command-to-create-a-fresh-shopify-app-1024x664.webp">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Create a Shopify Remix App (Step-by-Step Guide)">
+    <meta name="twitter:description" content="Learn how to create a modern Shopify app using Remix.js framework. Complete step-by-step guide with database setup, development server, and app installation process.">
+    <meta name="twitter:image" content="https://rashidyousufzai.com/assets/blogs/shopify-create-app/command-to-create-a-fresh-shopify-app-1024x664.webp">
+    
+    <!-- Article Meta Tags -->
+    <meta property="article:published_time" content="2025-01-15T00:00:00+00:00">
+    <meta property="article:author" content="Rashid Yousufzai">
+    <meta property="article:section" content="Web Development">
+    <meta property="article:tag" content="Shopify app development, Remix.js, e-commerce, web development, full-stack framework">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://rashidyousufzai.com/blog/create-shopify-app.html">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="twitter:creator" content="@RashidYousufZa3">
+    <meta name="twitter:site" content="@RashidYousufZa3">
+    <meta name="theme-color" content="#007bff">
+    <meta name="msapplication-TileColor" content="#007bff">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/images/fav1.ico" />
+    <link rel="shortcut icon" href="../assets/images/fav1.ico" />
+    <link rel="apple-touch-icon" href="../assets/images/fav1.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/fav1.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/fav1.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/images/fav1.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/images/fav1.png" />
+
+    <!-- CSS
+    ============================================ -->
+
+    <!-- Vendor CSS (Contain Bootstrap, Icon Fonts) -->
+    <!-- <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/vendor/icofont.min.css" /> -->
+
+    <!-- Plugin CSS (Global Plugins Files) -->
+    <!-- <link rel="stylesheet" href="assets/css/plugins/animate.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/venobox.min.css" /> -->
+
+    <!-- Style CSS -->
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+    
+    <!-- Minify Version -->
+    <link rel="stylesheet" href="../assets/css/vendor/vendor.min.css">
+    <link rel="stylesheet" href="../assets/css/plugins/plugins.min.css">
+    <link rel="stylesheet" href="../assets/css/style.min.css">
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How to Create a Shopify Remix App (Step-by-Step Guide)",
+        "description": "Learn how to create a modern Shopify app using Remix.js framework. Complete step-by-step guide with database setup, development server, and app installation process.",
+        "image": "https://rashidyousufzai.com/assets/blogs/shopify-create-app/command-to-create-a-fresh-shopify-app-1024x664.webp",
+        "author": {
+            "@type": "Person",
+            "name": "Rashid Yousufzai",
+            "url": "https://rashidyousufzai.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Rashid Yousufzai",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://rashidyousufzai.com/assets/images/logo/logo.png"
+            }
+        },
+        "datePublished": "2025-01-15T00:00:00+00:00",
+        "dateModified": "2025-01-15T00:00:00+00:00",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://rashidyousufzai.com/blog/create-shopify-app.html"
+        },
+        "keywords": ["Shopify app development", "Remix.js", "e-commerce", "web development", "full-stack framework", "Shopify API", "server-side rendering"],
+        "articleSection": "Web Development",
+        "wordCount": "1200"
+    }
+    </script>
+    <style>
+        /* Blog Content Styling */
+        .blog-content-area {
+            background: #2a2c39;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        /* Title Styling */
+        h1.title {
+            font-size: 42px !important;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+        
+        h2.title {
+            font-size: 32px !important;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        h3.title {
+            font-size: 24px !important;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        h4.title {
+            font-size: 20px !important;
+            font-weight: 500;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        /* Paragraph Styling */
+        .default-content-style p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #858792;
+            margin-bottom: 20px;
+        }
+        
+        /* Highlight Box Styling */
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .highlight-box h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .highlight-box p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        /* Code Block Styling */
+        .code-block {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #fff;
+            overflow-x: auto;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        /* Step Image Styling */
+        .step-image {
+            margin: 25px 0;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .step-image:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Content List Styling */
+        .content-list-with-text {
+            margin: 30px 0;
+        }
+        
+        .content-list-with-text li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .content-list-with-text li:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+        
+        .content-list-with-text li .left {
+            flex: 0 0 200px;
+            margin-right: 25px;
+        }
+        
+        .content-list-with-text li .right {
+            flex: 1;
+        }
+        
+        .content-list-with-text li .list-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        
+        .content-list-with-text li .right p {
+            margin-bottom: 0;
+            color: #858792;
+        }
+        
+        /* Quote Styling */
+        .quote {
+            font-size: 20px;
+            line-height: 1.5;
+            font-style: italic;
+            color: #667eea;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 4px solid #667eea;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Content Meta Styling */
+        .content-meta {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .section-tag {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .post-meta-2 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: #858792;
+            font-size: 14px;
+        }
+        
+        .post-meta-2 span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .post-meta-2 i {
+            margin-right: 8px;
+            color: #667eea;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .blog-content-area {
+                padding: 20px;
+                background: #2a2c39;
+            }
+            
+            h1.title {
+                font-size: 28px !important;
+                color: #fff;
+            }
+            
+            h2.title {
+                font-size: 24px !important;
+                color: #fff;
+            }
+            
+            h3.title {
+                font-size: 20px !important;
+                color: #fff;
+            }
+            
+            .content-list-with-text li {
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.05);
+            }
+            
+            .content-list-with-text li .left {
+                flex: none;
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .highlight-box {
+                padding: 20px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <main class="main-wrapper">
+        <header class="header-section sticky-header d-none d-lg-block">
+            <div class="header-wrapper">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col">
+                            <a href="../index.html" class="header-logo">
+                                <!-- <img src="assets/images/logo/logo.png" alt=""> -->
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <ul class="header-nav">
+                                <li><a href="../index.html">Home</a></li>
+                                <li><a href="../project-list.html">Projects</a></li>
+                                <li><a href="../contact.html">Contact Us</a></li>
+                                <li><a href="../blogs.html">Blogs</a></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <div class="header-btn-link text-end">
+                                <a href="../contact.html" class="btn btn-sm btn-outline-one icon-space-left">Hire Me <i
+                                        class="icofont-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Header -->
+        <div class="mobile-header d-block d-lg-none">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col">
+                        <div class="mobile-logo">
+                            <!-- <a href="index.html"><img src="assets/images/logo/logo.png" alt="" /></a> -->
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mobile-action-link text-end">
+                            <a href="#mobile-menu-offcanvas" class="offcanvas-toggle offside-menu"><i
+                                    class="icofont-navigation-menu"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu-offcanvas" class="offcanvas offcanvas-rightside offcanvas-mobile-menu-section">
+            <div class="offcanvas-header text-end">
+                <button class="offcanvas-close">
+                    <i class="icofont-close-line"></i>
+                </button>
+            </div>
+            <div class="offcanvas-mobile-menu-wrapper">
+                <div class="mobile-menu-bottom">
+                    <div class="offcanvas-menu">
+                        <ul>
+                            <li>
+                                <a href="../index.html"><span>Home</span></a>
+                            </li>
+                            <li>
+                                <a href="../project-list.html">Projects</a>
+                            </li>
+                            <li>
+                                <a href="../contact.html"><span>Contact</span></a>
+                            </li>
+                            <li>
+                                <a href="../blogs.html">Blogs</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Offcanvas Overlay -->
+        <div class="offcanvas-overlay"></div>
+
+
+        <!-- ...::: Start Blog List Section :::... -->
+        <div class="blog-details-section section-gap-tb-165">
+            <div class="blog-details-box">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Start Blog Content Area -->
+                            <div class="blog-content-area">
+                                <!-- Start Section Content -->
+                                <div class="default-content-style pos-relative">
+                                    <div class="content-meta">
+                                        <span class="section-tag">Web Development</span>
+                                        <div class="post-meta-2">
+                                            <span class="icon-space-right"><i class="icofont-ui-user"></i>by Rashid Yousufzai</span>
+                                            <span class="icon-space-right"><i class="icofont-calendar"></i>Jan 15, 2025</span>
+                                            <span class="icon-space-right"><i class="icofont-clock-time"></i>8 min read</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <h1 class="title">How to Create a Shopify Remix App (Step-by-Step Guide)</h1>
+                                    
+                                    <!-- Hero Image -->
+                                    <div class="content-inner-image">
+                                        <img src="../assets/blogs/shopify-create-app/command-to-create-a-fresh-shopify-app-1024x664.webp" alt="Creating a new Shopify Remix app with npm init command" class="img-fluid">
+                                    </div>
+
+                                    <div class="highlight-box">
+                                        <h4 style="margin-bottom: 10px;">🚀 Quick Overview</h4>
+                                        <p style="margin-bottom: 0;">Are you looking to build a modern Shopify app with speed, SEO-friendliness, and smooth performance? If yes, then Remix.js is one of the best frameworks you can use. This comprehensive guide will walk you through the entire process of creating your first Shopify Remix app.</p>
+                                    </div>
+
+                                    <h2 class="title">What is Remix and Why Use It?</h2>
+                                    <p>Remix is a full-stack web framework that helps developers build fast, optimized, and scalable applications. Unlike traditional frameworks, Remix focuses on:</p>
+
+                                    <ul class="content-list-with-text">
+                                        <li>
+                                            <div class="left">
+                                                <h4 class="list-title">Server-side rendering (SSR)</h4>
+                                            </div>
+                                            <div class="right">
+                                                <p>Pages load faster and rank better in search engines.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left">
+                                                <h4 class="list-title">Data loading optimization</h4>
+                                            </div>
+                                            <div class="right">
+                                                <p>Fetching data directly from the server without blocking rendering.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left">
+                                                <h4 class="list-title">Client-side navigation</h4>
+                                            </div>
+                                            <div class="right">
+                                                <p>Smooth transitions between pages without full reloads.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left">
+                                                <h4 class="list-title">File-based routing</h4>
+                                            </div>
+                                            <div class="right">
+                                                <p>Routes are created according to the file structure, making development simpler.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left">
+                                                <h4 class="list-title">Built-in styling support</h4>
+                                            </div>
+                                            <div class="right">
+                                                <p>Use CSS modules, global styles, or other styling techniques easily.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left">
+                                                <h4 class="list-title">Authentication & caching</h4>
+                                            </div>
+                                            <div class="right">
+                                                <p>Secure login handling and smart caching reduce unnecessary requests.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <p><strong>In short:</strong> Remix gives you performance + developer convenience in one package.</p>
+
+                                    <h2 class="title">Why Use Remix.js for Shopify Apps?</h2>
+                                    <p>When building Shopify apps, developers consider factors like performance, flexibility, and community support. Remix stands out because:</p>
+
+                                    <ul class="content-list-with-text">
+                                        <li>
+                                            <div class="left">
+                                                <h4 class="list-title">Seamless Shopify API Integration</h4>
+                                            </div>
+                                            <div class="right">
+                                                <p>It integrates smoothly with Shopify's APIs and webhooks.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left">
+                                                <h4 class="list-title">TypeScript Support</h4>
+                                            </div>
+                                            <div class="right">
+                                                <p>It supports both JavaScript and TypeScript for better type safety.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left">
+                                                <h4 class="list-title">Faster Load Times</h4>
+                                            </div>
+                                            <div class="right">
+                                                <p>Great for e-commerce where speed directly impacts conversions.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left">
+                                                <h4 class="list-title">Well-Structured Code</h4>
+                                            </div>
+                                            <div class="right">
+                                                <p>It keeps code well-organized with file-based routing.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <p>So, if you want a Shopify app that's modern, scalable, and future-proof, Remix is an excellent choice.</p>
+
+                                    <h2 class="title">Step-by-Step Guide: Creating Your Shopify Remix App</h2>
+
+                                    <h3 class="title">Step 1: Create a New Shopify Remix App</h3>
+                                    <p>Run the following command in your terminal:</p>
+                                    
+                                    <div class="code-block">
+                                        npm init @shopify/app@latest
+                                    </div>
+
+                                    <div class="content-inner-image">
+                                        <img src="../assets/blogs/shopify-create-app/command-to-create-a-fresh-shopify-app-1024x664.webp" alt="Terminal showing npm init @shopify/app@latest command" class="img-fluid step-image">
+                                    </div>
+
+                                    <p>The setup process will ask you several questions:</p>
+                                    <ul>
+                                        <li><strong>Project name:</strong> Enter your desired project name</li>
+                                        <li><strong>Framework selection:</strong> Select "Start with Remix (recommended)"</li>
+                                        <li><strong>Language choice:</strong> Choose between JavaScript or TypeScript</li>
+                                        <li><strong>Shopify CLI installation:</strong> Select "Yes (recommended)" for global installation</li>
+                                    </ul>
+
+                                    <h3 class="title">Step 2: Open the App in Your Code Editor</h3>
+                                    <p>Navigate into your project folder:</p>
+                                    
+                                    <div class="code-block">
+                                        cd your-project-name
+                                    </div>
+
+                                    <p>Open it in your preferred code editor (e.g., Visual Studio Code).</p>
+
+                                    <h3 class="title">Step 3: Connect to a Database</h3>
+                                    <p>You can choose between MySQL or SQLite for your database:</p>
+
+                                    <h4 class="title">MySQL Setup:</h4>
+                                    <ul>
+                                        <li>Create a blank database in your MySQL server</li>
+                                        <li>Modify the <code>schema.prisma</code> file to match your MySQL setup</li>
+                                    </ul>
+
+                                    <div class="content-inner-image">
+                                        <img src="../assets/blogs/shopify-create-app/create-a-database-for-sqlite-1024x431.webp" alt="Database setup options for Shopify app" class="img-fluid step-image">
+                                    </div>
+
+                                    <h4 class="title">SQLite Setup:</h4>
+                                    <ul>
+                                        <li>No extra setup required</li>
+                                        <li>Just confirm that the datasource db code exists in the <code>schema.prisma</code> file</li>
+                                    </ul>
+
+                                    <div class="content-inner-image">
+                                        <img src="../assets/blogs/shopify-create-app/create-the-blank-database-and-modify-the-schema.prisma-file-1024x516.webp" alt="Prisma schema file configuration for database" class="img-fluid step-image">
+                                    </div>
+
+                                    <h3 class="title">Step 4: Run the Development Server</h3>
+                                    <p>Start your app with:</p>
+                                    
+                                    <div class="code-block">
+                                        npm run dev
+                                    </div>
+
+                                    <div class="content-inner-image">
+                                        <img src="../assets/blogs/shopify-create-app/run-the-command-1024x519.webp" alt="Running npm run dev command to start development server" class="img-fluid step-image">
+                                    </div>
+
+                                    <p>You'll be prompted to choose:</p>
+                                    <ul>
+                                        <li><strong>(y) Yes</strong> → Create as a new app</li>
+                                        <li><strong>(n) No</strong> → Connect to an existing app</li>
+                                    </ul>
+
+                                    <p>After that, select the Shopify store you want to use for development.</p>
+
+                                    <h3 class="title">Step 5: Install the App on Your Development Store</h3>
+                                    <p>Copy the link generated in your terminal (from VS Code).</p>
+
+                                    <div class="content-inner-image">
+                                        <img src="../assets/blogs/shopify-create-app/copy-the-link-from-vs-code-terminal-1024x148.webp" alt="Copying the app installation link from VS Code terminal" class="img-fluid step-image">
+                                    </div>
+
+                                    <p>Open it in your browser and install the app on your Shopify development store.</p>
+
+                                    <div class="content-inner-image">
+                                        <img src="../assets/blogs/shopify-create-app/app-dashboard-1-1024x324.webp" alt="Shopify app dashboard after successful installation" class="img-fluid step-image">
+                                    </div>
+
+                                    <p>Once installed, you'll see the app dashboard inside your store. 🎉</p>
+
+                                    <h3 class="title">Step 6: Database Configuration (Optional)</h3>
+                                    <p>If you're using MySQL, you'll need to configure your database connection:</p>
+
+                                    <div class="content-inner-image">
+                                        <img src="../assets/blogs/shopify-create-app/mysql-shown-1024x327.webp" alt="MySQL database configuration for Shopify app" class="img-fluid step-image">
+                                    </div>
+
+                                    <h2 class="title">Best Practices for Shopify Remix Apps</h2>
+                                    
+                                    <h4 class="quote">
+                                        "Following best practices ensures your Shopify Remix app is maintainable, scalable, and performs optimally."
+                                    </h4>
+
+                                    <ul class="content-list-with-text">
+                                        <li>
+                                            <div class="left">
+                                                <h4 class="list-title">Use TypeScript</h4>
+                                            </div>
+                                            <div class="right">
+                                                <p>TypeScript provides better type safety and developer experience.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left">
+                                                <h4 class="list-title">Implement Proper Error Handling</h4>
+                                            </div>
+                                            <div class="right">
+                                                <p>Handle API errors gracefully and provide meaningful user feedback.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left">
+                                                <h4 class="list-title">Optimize for Performance</h4>
+                                            </div>
+                                            <div class="right">
+                                                <p>Use Remix's built-in caching and data loading optimizations.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left">
+                                                <h4 class="list-title">Follow Shopify's Design Guidelines</h4>
+                                            </div>
+                                            <div class="right">
+                                                <p>Ensure your app UI matches Shopify's design system for consistency.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <h2 class="title">Common Challenges and Solutions</h2>
+                                    <p>While creating Shopify Remix apps is generally straightforward, you might encounter some challenges:</p>
+
+                                    <h3 class="title">Challenge 1: Database Connection Issues</h3>
+                                    <p><strong>Solution:</strong> Double-check your database credentials and ensure the database server is running.</p>
+
+                                    <h3 class="title">Challenge 2: App Installation Problems</h3>
+                                    <p><strong>Solution:</strong> Make sure you're using a development store and have the necessary permissions.</p>
+
+                                    <h3 class="title">Challenge 3: API Rate Limits</h3>
+                                    <p><strong>Solution:</strong> Implement proper rate limiting and caching strategies in your app.</p>
+
+                                    <h2 class="title">Final Thoughts</h2>
+                                    <p>Creating a Shopify Remix App may seem technical at first, but once you follow the steps, it becomes straightforward. Remix gives you SEO benefits, faster performance, and a great developer experience, while Shopify provides the powerful e-commerce backbone.</p>
+
+                                    <p>With this setup, you're ready to build dynamic, scalable, and user-friendly Shopify apps that can grow with your business. The combination of Remix's modern framework capabilities and Shopify's robust e-commerce platform creates a powerful foundation for building successful applications.</p>
+
+                                    <div class="highlight-box">
+                                        <h4 style="margin-bottom: 10px;">🎯 Key Takeaways</h4>
+                                        <ul style="margin-bottom: 0; padding-left: 20px;">
+                                            <li>Remix.js provides excellent performance and developer experience for Shopify apps</li>
+                                            <li>The setup process is streamlined with Shopify's CLI tools</li>
+                                            <li>Both SQLite and MySQL are supported for database needs</li>
+                                            <li>Proper configuration ensures smooth development workflow</li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <!-- End Section Content -->
+                            </div>
+                            <!-- End Blog Content Area -->
+
+                            <!-- Start Tag Area  -->
+                            <div class="tag-area section-mt-75">
+                                <!-- Start Tag Box -->
+                                <div class="tag-box">
+                                    <div>
+                                        <div class="tag-list">
+                                            <h5 class="title">Tags:</h5>
+                                            <ul class="list-item">
+                                                <li><a href="#">Shopify</a></li>
+                                                <li><a href="#">Remix.js</a></li>
+                                                <li><a href="#">Web Development</a></li>
+                                                <li><a href="#">E-commerce</a></li>
+                                                <li><a href="#">Full-Stack</a></li>
+                                                <li><a href="#">JavaScript</a></li>
+                                                <li><a href="#">TypeScript</a></li>
+                                                <li><a href="#">App Development</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <ul class="social-link">
+                                            <li><a href="https://www.facebook.com/RashidYousufZa/" target="_blank"><i class="icofont-facebook"></i></a></li>
+                                            <li><a href="https://github.com/Rashidqf" target="_blank"><i class="icofont-github"></i></a></li>
+                                            <li><a href="https://www.linkedin.com/in/rashidyousufzai/" target="_blank"><i class="icofont-linkedin"></i></a></li>
+                                            <li><a href="https://x.com/RashidYousufZa3" target="_blank"><i class="icofont-twitter"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- End Tag Box -->
+                            </div>
+                            <!--  End Tag Area  -->
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ...::: End Blog List Section :::... -->
+
+        <!-- ...::: Start Footer Section :::... -->
+         <!-- Footer Section -->
+         <footer class="footer-section section-bg overflow-hidden pos-relative">
+            <div class="footer-inner-shape-top-left"></div>
+            <div class="footer-inner-shape-top-right"></div>
+
+            <!-- Footer Main Content -->
+            <div class="footer-main section-gap-tb-165">
+                <div class="container">
+                    <div class="row">
+                        <!-- Footer About Column -->
+                        <div class="col-lg-4 col-md-6 mb-6">
+                            <div class="footer-about">
+                                <div class="footer-logo mb-4">
+                                    <h3 class="text-white mb-2">Rashid Yousufzai</h3>
+                                    <p class="text-muted">Full Stack Developer & Mobile App Expert</p>
+                                </div>
+                                <p class="footer-description mb-4">
+                                    Experienced full-stack developer specializing in MERN stack, WordPress, Shopify
+                                    apps, and mobile app
+                                    development. Building innovative solutions for clients worldwide.
+                                </p>
+                                <div class="footer-social">
+                                    <h6 class="text-white mb-3">Follow Me</h6>
+                                    <ul class="social-links">
+                                        <li>
+                                            <a href="https://www.facebook.com/RashidYousufZa/" target="_blank"
+                                                class="social-link-item">
+                                                <i class="icofont-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/Rashidqf" target="_blank"
+                                                class="social-link-item">
+                                                <i class="icofont-github"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/in/rashidyousufzai/" target="_blank"
+                                                class="social-link-item">
+                                                <i class="icofont-linkedin"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.instagram.com/rashid.yousufzai/" target="_blank"
+                                                class="social-link-item">
+                                                <i class="icofont-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://x.com/RashidYousufZa3" target="_blank"
+                                                class="social-link-item">
+                                                <i class="icofont-twitter"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer Services Column -->
+                        <div class="col-lg-2 col-md-6 mb-6">
+                            <div class="footer-services">
+                                <h5 class="footer-title text-white mb-4">Services</h5>
+                                <ul class="footer-links">
+                                    <li><a href="#services">Web Development</a></li>
+                                    <li><a href="#services">Mobile Apps</a></li>
+                                    <li><a href="#services">WordPress Development</a></li>
+                                    <li><a href="#services">Shopify Apps</a></li>
+                                    <li><a href="#services">AI/ML Integration</a></li>
+                                    <li><a href="#services">UI/UX Design</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Footer Quick Links Column -->
+                        <div class="col-lg-2 col-md-6 mb-6">
+                            <div class="footer-quick-links">
+                                <h5 class="footer-title text-white mb-4">Quick Links</h5>
+                                <ul class="footer-links">
+                                    <li><a href="../index.html">Home</a></li>
+                                    <li><a href="../project-list.html">Projects</a></li>
+                                    <li><a href="../contact.html">Contact</a></li>
+                                    <li><a href="../about.html">About</a></li>
+                                    <li><a href="#resume">Resume</a></li>
+                                    <li><a href="#testimonials">Testimonials</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Footer Contact Column -->
+                        <div class="col-lg-4 col-md-6 mb-6">
+                            <div class="footer-contact">
+                                <h5 class="footer-title text-white mb-4">Get In Touch</h5>
+                                <div class="contact-info">
+                                    <div class="contact-item mb-3">
+                                        <div class="contact-icon">
+                                            <i class="icofont-phone"></i>
+                                        </div>
+                                        <div class="contact-details">
+                                            <h6 class="text-white mb-1">Phone</h6>
+                                            <a href="tel:+923102807579" class="text-muted">+92 310 287 0579</a>
+                                        </div>
+                                    </div>
+                                    <div class="contact-item mb-3">
+                                        <div class="contact-icon">
+                                            <i class="icofont-envelope-open"></i>
+                                        </div>
+                                        <div class="contact-details">
+                                            <h6 class="text-white mb-1">Email</h6>
+                                            <a href="mailto:iamrashidyousufzai@gmail.com"
+                                                class="text-muted">iamrashidyousufzai@gmail.com</a>
+                                        </div>
+                                    </div>
+                                    <div class="contact-item mb-3">
+                                        <div class="contact-icon">
+                                            <i class="icofont-location-pin"></i>
+                                        </div>
+                                        <div class="contact-details">
+                                            <h6 class="text-white mb-1">Location</h6>
+                                            <span class="text-muted">Karachi, Pakistan</span>
+                                        </div>
+                            </div>
+                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <div class="footer-copyright">
+                                <p class="mb-0 text-muted">
+                                    © 2025 <span class="text-white">Rashid Yousufzai</span>. All rights reserved.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="footer-bottom-links text-md-end">
+                                <ul class="footer-bottom-nav">
+                                    <li><a href="#privacy">Privacy Policy</a></li>
+                                    <li><a href="#terms">Terms of Service</a></li>
+                                    <li><a href="#sitemap">Sitemap</a></li>
+                                </ul>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- material-scrolltop button -->
+        <!-- <button class="material-scrolltop" type="button"></button> -->
+    </main>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+      <div class="chat-label" id="chatLabel">
+        <span>Chat with AI</span>
+        <div class="label-arrow"></div>
+      </div>
+      <div class="chat-icon" id="chatIcon">
+        <i class="icofont-comment"></i>
+        <div class="chat-notification"><span>1</span></div>
+      </div>
+      <div class="chat-modal" id="chatModal">
+        <div class="chat-modal-content">
+          <div class="chat-header">
+            <div class="chat-header-info">
+              <div class="chat-avatar">
+                <img src="../assets/images/bg/profilePic.png" alt="Rashid Yousufzai" />
+              </div>
+              <div class="chat-user-info">
+                <h5>Rashid Yousufzai</h5>
+                <span class="status online">Online</span>
+              </div>
+            </div>
+            <div class="chat-actions">
+              <button class="chat-minimize" id="chatMinimize"><i class="icofont-minus"></i></button>
+              <button class="chat-close" id="chatClose"><i class="icofont-close-line"></i></button>
+            </div>
+          </div>
+          <div class="chat-messages" id="chatMessages">
+            <div class="message received">
+              <div class="message-content">
+                <p>Hello! 👋 I'm Rashid, a Full Stack Developer. You can chat with me or ask questions about AI/ML development, MERN stack, and more! How can I help you today?</p>
+                <span class="message-time">Just now</span>
+              </div>
+            </div>
+          </div>
+          <div class="chat-input">
+            <div class="input-group">
+              <input type="text" id="messageInput" placeholder="Ask me anything about AI, MERN stack, or development..." />
+              <button class="send-btn" id="sendMessage"><i class="icofont-send-mail"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Minify Version -->
+    <script src="../assets/js/vendor.min.js"></script>
+    <script src="../assets/js/plugins.min.js"></script>
+
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!--Main JS (Common Activation Codes)-->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

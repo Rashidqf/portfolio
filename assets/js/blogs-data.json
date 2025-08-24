@@ -8,7 +8,7 @@
     {
       "id": "web-dev",
       "name": "Web Development",
-      "count": 0
+      "count": 1
     },
     {
       "id": "mobile-apps",
@@ -34,6 +34,21 @@
   "blogs": [
     {
       "id": 1,
+      "title": "How to Create a Shopify Remix App (Step-by-Step Guide)",
+      "excerpt": "Learn how to create a modern Shopify app using Remix.js framework. Complete step-by-step guide with database setup, development server, and app installation process.",
+      "content": "Are you looking to build a modern Shopify app with speed, SEO-friendliness, and smooth performance? If yes, then Remix.js is one of the best frameworks you can use. This comprehensive guide will walk you through the entire process of creating your first Shopify Remix app.",
+      "category": "web-dev",
+      "categoryName": "Web Development",
+      "author": "Rashid Yousufzai",
+      "date": "2025-01-15",
+      "image": "assets/blogs/shopify-create-app/command-to-create-a-fresh-shopify-app-1024x664.webp",
+      "file": "create-shopify-app",
+      "likes": 890,
+      "comments": 56,
+      "featured": true
+    },
+    {
+      "id": 2,
       "title": "Pinecone: The AI Database Powering Smarter ChatGPT Experiences",
       "excerpt": "Discover how Pinecone's vector database revolutionizes AI interactions with ChatGPT. Learn about blazing-fast vector search, precision at scale, and effortless scalability for AI applications.",
       "content": "In the rapidly evolving world of artificial intelligence, efficiency and scalability in data retrieval are more important than ever. One of the biggest challenges AI models like ChatGPT face is delivering highly relevant responses in real-time. Enter Pinecone, a revolutionary vector database that transforms how AI interacts with vast knowledge repositories.",
@@ -42,24 +57,9 @@
       "author": "Rashid Yousufzai",
       "date": "2025-04-02",
       "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*i_ysvucE20LW9IImkvBkJg.png",
-      "file": "pinecone-ai-database-powering-smarter-chatgpt-experiences.html",
+      "file": "pinecone-ai-database-powering-smarter-chatgpt-experiences",
       "likes": 1250,
       "comments": 89,
-      "featured": true
-    },
-    {
-      "id": 2,
-      "title": "The Open-Source AI Sidekick You Didn't Know You Needed: RAGFlow",
-      "excerpt": "Ever had a chatbot give you nonsense? RAGFlow is the open-source solution that ensures your AI applications provide accurate, contextual responses by eliminating hallucinations.",
-      "content": "We've all been there. You ask an AI assistant something important, and it confidently spits out a completely wrong answer. Maybe it tells you that the Eiffel Tower is in Germany or that Elon Musk discovered electricity. RAGFlow is an open-source retrieval-augmented generation (RAG) framework that helps AI fetch real-world knowledge before answering your question.",
-      "category": "ai-ml",
-      "categoryName": "AI/ML",
-      "author": "Rashid Yousufzai",
-      "date": "2025-03-22",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*gx7_jFk7o2S9f-Sj0HDAMQ.png",
-      "file": "open-source-ai-sidekick-ragflow.html",
-      "likes": 1100,
-      "comments": 92,
       "featured": true
     },
     {
@@ -72,7 +72,7 @@
       "author": "Rashid Yousufzai",
       "date": "2025-04-02",
       "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi0052g0obsmn42r3wm5i.PNG",
-      "file": "ragflow-vs-gpt-which-one-right-for-ai-application.html",
+      "file": "ragflow-vs-gpt-which-one-right-for-ai-application",
       "likes": 980,
       "comments": 67,
       "featured": true
@@ -87,7 +87,7 @@
       "author": "Rashid Yousufzai",
       "date": "2025-03-24",
       "image": "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ELfLOnCPrZdhQvuKyi10YQ.jpeg",
-      "file": "comparing-ragflow-with-other-rag-frameworks-langchain-llamaindex.html",
+      "file": "comparing-ragflow-with-other-rag-frameworks-langchain-llamaindex",
       "likes": 756,
       "comments": 45,
       "featured": false
@@ -95,38 +95,45 @@
   ],
   "pagination": {
     "itemsPerPage": 6,
-    "totalItems": 4,
+    "totalItems": 5,
     "totalPages": 1,
     "currentPage": 1
   },
   "recentPosts": [
     {
       "id": 1,
-      "title": "Pinecone: The AI Database Powering Smarter ChatGPT Experiences",
-      "date": "2025-04-02",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*i_ysvucE20LW9IImkvBkJg.png",
-      "file": "pinecone-ai-database-powering-smarter-chatgpt-experiences.html"
+      "title": "How to Create a Shopify Remix App (Step-by-Step Guide)",
+      "date": "2025-01-15",
+      "image": "assets/blogs/shopify-create-app/command-to-create-a-fresh-shopify-app-1024x664.webp",
+      "file": "create-shopify-app"
     },
     {
       "id": 2,
-      "title": "The Open-Source AI Sidekick You Didn't Know You Needed: RAGFlow",
-      "date": "2025-03-22",
-      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*gx7_jFk7o2S9f-Sj0HDAMQ.png",
-      "file": "open-source-ai-sidekick-ragflow.html"
+      "title": "Pinecone: The AI Database Powering Smarter ChatGPT Experiences",
+      "date": "2025-04-02",
+      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*i_ysvucE20LW9IImkvBkJg.png",
+      "file": "pinecone-ai-database-powering-smarter-chatgpt-experiences"
     },
     {
       "id": 3,
-      "title": "RAGFlow vs. GPT: Which One is Right for Your AI Application?",
-      "date": "2025-04-02",
-      "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi0052g0obsmn42r3wm5i.PNG",
-      "file": "ragflow-vs-gpt-which-one-right-for-ai-application.html"
+      "title": "The Open-Source AI Sidekick You Didn't Know You Needed: RAGFlow",
+      "date": "2025-03-22",
+      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*gx7_jFk7o2S9f-Sj0HDAMQ.png",
+      "file": "open-source-ai-sidekick-ragflow"
     },
     {
       "id": 4,
+      "title": "RAGFlow vs. GPT: Which One is Right for Your AI Application?",
+      "date": "2025-04-02",
+      "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi0052g0obsmn42r3wm5i.PNG",
+      "file": "ragflow-vs-gpt-which-one-right-for-ai-application"
+    },
+    {
+      "id": 5,
       "title": "Comparing RAGFlow with Other RAG Frameworks: LangChain, LlamaIndex & More",
       "date": "2025-03-24",
       "image": "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ELfLOnCPrZdhQvuKyi10YQ.jpeg",
-      "file": "comparing-ragflow-with-other-rag-frameworks-langchain-llamaindex.html"
+      "file": "comparing-ragflow-with-other-rag-frameworks-langchain-llamaindex"
     }
   ]
 } 

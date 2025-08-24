@@ -489,11 +489,42 @@
         let isMinimized = false;
         let conversationHistory = [];
 
+        // Function to handle responsive modal positioning
+        function updateModalPosition() {
+            if (window.innerWidth <= 768) {
+                // Mobile positioning
+                chatModal.style.position = 'fixed';
+                chatModal.style.top = '0';
+                chatModal.style.left = '0';
+                chatModal.style.right = '0';
+                chatModal.style.bottom = '0';
+                chatModal.style.width = '100%';
+                chatModal.style.height = '100%';
+                chatModal.style.maxWidth = '100%';
+                chatModal.style.maxHeight = '100%';
+                chatModal.style.borderRadius = '0';
+                chatModal.style.margin = '0';
+            } else {
+                // Desktop positioning
+                chatModal.style.position = 'fixed';
+                chatModal.style.top = '50%';
+                chatModal.style.left = '50%';
+                chatModal.style.transform = 'translate(-50%, -50%)';
+                chatModal.style.width = '400px';
+                chatModal.style.height = '600px';
+                chatModal.style.maxWidth = '90vw';
+                chatModal.style.maxHeight = '90vh';
+                chatModal.style.borderRadius = '12px';
+                chatModal.style.margin = '0';
+            }
+        }
+
         // Open chat modal
         chatIcon.addEventListener('click', function() {
             chatModal.classList.add('active'); 
             chatNotification.style.display = 'none';
             messageInput.focus();
+            updateModalPosition();
         });
 
         // Close chat modal
@@ -508,9 +539,32 @@
             if (isMinimized) {
                 chatModal.classList.remove('minimized');
                 isMinimized = false;
+                updateModalPosition();
             } else {
                 chatModal.classList.add('minimized');
                 isMinimized = true;
+                // Minimized state positioning
+                if (window.innerWidth <= 768) {
+                    chatModal.style.position = 'fixed';
+                    chatModal.style.bottom = '80px';
+                    chatModal.style.right = '20px';
+                    chatModal.style.top = 'auto';
+                    chatModal.style.left = 'auto';
+                    chatModal.style.transform = 'none';
+                    chatModal.style.width = '300px';
+                    chatModal.style.height = '400px';
+                    chatModal.style.maxWidth = '90vw';
+                    chatModal.style.maxHeight = '60vh';
+                } else {
+                    chatModal.style.position = 'fixed';
+                    chatModal.style.bottom = '100px';
+                    chatModal.style.right = '30px';
+                    chatModal.style.top = 'auto';
+                    chatModal.style.left = 'auto';
+                    chatModal.style.transform = 'none';
+                    chatModal.style.width = '350px';
+                    chatModal.style.height = '500px';
+                }
             }
         });
 
@@ -525,7 +579,8 @@
                 </div>
             `;
             chatMessages.appendChild(messageElement);
-            // Don't auto-scroll - let user control scrolling
+            // Auto-scroll to bottom for better UX
+            chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
         // AI Response function
@@ -601,7 +656,7 @@ Answer every user question as if you are Rashid, using only the information abov
                     </div>
                 `;
                 chatMessages.appendChild(typingElement);
-                // Don't auto-scroll - let user control scrolling
+                chatMessages.scrollTop = chatMessages.scrollHeight;
 
                 // Make API call through Netlify Function
                 const response = await fetch(AI_API_URL, {
@@ -685,7 +740,7 @@ Answer every user question as if you are Rashid, using only the information abov
                     </div>
                 `;
                 chatMessages.appendChild(messageElement);
-                // Don't auto-scroll - let user control scrolling
+                chatMessages.scrollTop = chatMessages.scrollHeight;
 
             } catch (error) {
                 console.error('AI API Error:', error);
@@ -708,7 +763,7 @@ Answer every user question as if you are Rashid, using only the information abov
                     </div>
                 `;
                 chatMessages.appendChild(messageElement);
-                // Don't auto-scroll - let user control scrolling
+                chatMessages.scrollTop = chatMessages.scrollHeight;
             }
         }
 
@@ -752,6 +807,13 @@ Answer every user question as if you are Rashid, using only the information abov
                     chatModal.classList.remove('minimized');
                     isMinimized = false;
                 }
+            }
+        });
+
+        // Handle window resize for responsive modal
+        window.addEventListener('resize', function() {
+            if (chatModal.classList.contains('active') && !isMinimized) {
+                updateModalPosition();
             }
         });
 

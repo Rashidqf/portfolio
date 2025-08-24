@@ -4,6 +4,11 @@ Allow: /
 # Sitemap
 Sitemap: https://rashidyousufzai.netlify.app/sitemap.xml
 
+# Allow all important directories
+Allow: /project-detail/
+Allow: /blog/
+Allow: /assets/
+
 # Allow all major search engines
 User-agent: Googlebot
 Allow: /

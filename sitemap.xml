@@ -1,117 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://rashidyousufzai.netlify.app/</loc>
-  <lastmod>2025-01-15T12:27:50+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/project-list</loc>
-  <lastmod>2025-01-15T12:27:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/contact</loc>
-  <lastmod>2025-01-15T12:27:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/blogs</loc>
-  <lastmod>2025-01-15T12:27:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/blog-details</loc>
-  <lastmod>2025-01-15T12:27:50+00:00</lastmod>
-  <priority>0.70</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/blog/pinecone-ai-database-powering-smarter-chatgpt-experiences</loc>
-  <lastmod>2025-04-02T12:27:50+00:00</lastmod>
-  <priority>0.75</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/blog/open-source-ai-sidekick-ragflow</loc>
-  <lastmod>2025-03-22T12:27:50+00:00</lastmod>
-  <priority>0.75</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/blog/ragflow-vs-gpt-which-one-right-for-ai-application</loc>
-  <lastmod>2025-04-02T12:27:50+00:00</lastmod>
-  <priority>0.75</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/blog/comparing-ragflow-with-other-rag-frameworks-langchain-llamaindex</loc>
-  <lastmod>2025-03-24T12:27:50+00:00</lastmod>
-  <priority>0.75</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/assets/Rashidmern.pdf</loc>
-  <lastmod>2025-01-15T12:27:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/project-detail/ai-poweredreal-timeenglish</loc>
-  <lastmod>2025-01-15T12:27:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/project-detail/pocketcoachai</loc>
-  <lastmod>2025-01-15T12:27:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/project-detail/daylilyinteractive3daisalesassistant</loc>
-  <lastmod>2025-01-15T12:27:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/project-detail/custombeaddesignertool</loc>
-  <lastmod>2025-01-15T12:27:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/project-detail/productdesignerapp</loc>
-  <lastmod>2025-01-15T12:27:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/project-detail/custom-patches</loc>
-  <lastmod>2025-01-15T12:27:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/project-detail/trading-automation</loc>
-  <lastmod>2025-01-15T12:27:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/project-detail/instagram-analytics</loc>
-  <lastmod>2025-01-15T12:27:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/project-detail/news-web-application</loc>
-  <lastmod>2025-01-15T12:27:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/project-detail/ai-powered-recruitment-automation</loc>
-  <lastmod>2025-01-15T12:27:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://rashidyousufzai.netlify.app/404-page</loc>
-  <lastmod>2025-01-15T12:27:50+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Main Pages -->
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/index.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/project-list.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/contact.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/blogs.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/sitemap.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <!-- Project Detail Pages -->
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/project-detail/AI-PoweredReal-TimeEnglish.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/project-detail/PocketCoachAI.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/project-detail/CustomBeadDesignerTool.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/project-detail/DaylilyInteractive3DAISalesAssistant.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/project-detail/InstagramAnalytics.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/project-detail/NewsWebApplication.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/project-detail/ProductDesignerApp.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/project-detail/trading-automation.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/project-detail/custom-patches.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/project-detail/AIPoweredRecruitmentAutomation.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Blog Pages -->
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/blog/create-shopify-app.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/blog/pinecone-ai-database-powering-smarter-chatgpt-experiences.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/blog/ragflow-vs-gpt-which-one-right-for-ai-application.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/blog/comparing-ragflow-with-other-rag-frameworks-langchain-llamaindex.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://rashidyousufzai.netlify.app/blog/open-source-ai-sidekick-ragflow.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>

@@ -626,7 +626,7 @@ Answer every user question as if you are Rashid, using only the information abov
 
                 // Prepare API request
                 const requestBody = {
-                    model: "gemini-2.0-flash",
+                    model: "gemini-2.0-flash-lite", // Using Gemini 2.0 Flash Lite for faster responses
                     messages: [
                         {
                             role: "system",
@@ -634,7 +634,9 @@ Answer every user question as if you are Rashid, using only the information abov
                         },
                         ...conversationHistory.slice(-5) // Keep last 5 messages for context
                     ],
-                    stream: false
+                    stream: false,
+                    temperature: 0.7, // Control response creativity
+                    max_tokens: 2048 // Limit response length
                 };
 
                 // Show typing indicator
@@ -663,13 +665,20 @@ Answer every user question as if you are Rashid, using only the information abov
                 });
 
                 if (!response.ok) {
-                    throw new Error(`API request failed: ${response.status}`);
+                    const errorData = await response.json().catch(() => ({}));
+                    const errorMessage = errorData.error || errorData.message || `API request failed with status ${response.status}`;
+                    throw new Error(errorMessage);
                 }
 
                 const data = await response.json();
                 
                 // Remove typing indicator
                 chatMessages.removeChild(typingElement);
+
+                // Validate response structure
+                if (!data.choices || !data.choices[0] || !data.choices[0].message) {
+                    throw new Error('Invalid response format from API');
+                }
 
                 // Extract AI response
                 const aiResponse = data.choices[0].message.content;
@@ -707,15 +716,23 @@ Answer every user question as if you are Rashid, using only the information abov
                 
                 // Remove typing indicator if it exists
                 const typingElement = document.querySelector('.typing');
-                if (typingElement) {
+                if (typingElement && typingElement.parentNode) {
                     chatMessages.removeChild(typingElement);
                 }
 
-                // Fallback response
-                const fallbackResponse = "I apologize, but I'm having trouble connecting to my AI system right now. You can reach me directly at " + rashidProfile.contact.email + " or call me at " + rashidProfile.contact.phone + ". I'll get back to you as soon as possible!";
+                // Create user-friendly error message
+                let errorMessage = error.message || 'Unknown error occurred';
+                if (errorMessage.includes('API key')) {
+                    errorMessage = "Configuration error. Please contact the website administrator.";
+                } else if (errorMessage.includes('Invalid response')) {
+                    errorMessage = "Received an unexpected response format. Please try again.";
+                }
+
+                // Fallback response with error details
+                const fallbackResponse = `I apologize, but I'm having trouble connecting to my AI system right now (${errorMessage}). You can reach me directly at ${rashidProfile.contact.email} or call me at ${rashidProfile.contact.phone}. I'll get back to you as soon as possible!`;
                 
                 const messageElement = document.createElement('div');
-                messageElement.className = 'message received';
+                messageElement.className = 'message received error';
                 messageElement.innerHTML = `
                     <div class="message-content">
                         <p>${fallbackResponse}</p>
@@ -724,6 +741,11 @@ Answer every user question as if you are Rashid, using only the information abov
                 `;
                 chatMessages.appendChild(messageElement);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                // Remove error message from conversation history to avoid confusion
+                if (conversationHistory.length > 0 && conversationHistory[conversationHistory.length - 1].role === 'user') {
+                    conversationHistory.pop();
+                }
             }
         }
 

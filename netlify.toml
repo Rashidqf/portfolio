@@ -178,12 +178,21 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
 # --- Security / hygiene ---
 # X-XSS-Protection removed: deprecated and can hurt modern XSS defenses; prefer CSP.
-# CSP allows jsDelivr (marked, EmailJS), EmailJS API, Google Fonts, remote article images,
-# and the Google Maps embed on /contact. Uses 'unsafe-inline' for inline scripts/styles (template).
-# Brotli: Netlify serves Content-Encoding: br for eligible assets when the browser advertises support;
-# no netlify.toml knob required (gzip/br are handled at the CDN edge).
+# CSP: no inline scripts — contact form & project cards load from /assets/js/*.js; JSON-LD stays type=application/ld+json.
+# style-src keeps 'unsafe-inline' for template inline styles. frame-ancestors complements X-Frame-Options.
+# Brotli: Netlify negotiates br at the edge when supported; no netlify.toml setting required.
 [[headers]]
   for = "/*"
   [headers.values]
@@ -191,4 +200,4 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://api.emailjs.com; frame-src 'self' https://www.google.com https://maps.google.com; object-src 'none'; base-uri 'self'; form-action 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://api.emailjs.com; frame-src 'self' https://www.google.com https://maps.google.com; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"

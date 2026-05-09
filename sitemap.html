@@ -53,6 +53,26 @@
         }
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://rashidyousufzai.netlify.app/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Site Map",
+                "item": "https://rashidyousufzai.netlify.app/sitemap"
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body>
@@ -442,37 +462,6 @@
     <script src="assets/js/vendor.min.js"></script>
     <script src="assets/js/plugins.min.js"></script>
     <script src="assets/js/main.js"></script>
-
-    <!-- Additional SEO Scripts -->
-    <script>
-        // Add structured data for sitemap
-        document.addEventListener('DOMContentLoaded', function () {
-            // Add breadcrumb structured data
-            const breadcrumbData = {
-                "@context": "https://schema.org",
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://rashidyousufzai.netlify.app/"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "Site Map",
-                        "item": "https://rashidyousufzai.netlify.app/sitemap"
-                    }
-                ]
-            };
-
-            const script = document.createElement('script');
-            script.type = 'application/ld+json';
-            script.text = JSON.stringify(breadcrumbData);
-            document.head.appendChild(script);
-        });
-    </script>
 </body>
 
 </html>

@@ -2,6 +2,13 @@
 [build]
   publish = "."
 
+# Google and many crawlers request /favicon.ico at the domain root by default.
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/assets/images/fav1.ico"
+  status = 200
+  force = true
+
 # --- 301: .html → canonical clean URLs ---
 [[redirects]]
   from = "/index.html"
@@ -171,12 +178,17 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# --- Security / hygiene (no strict CSP — third-party scripts/fonts) ---
+# --- Security / hygiene ---
+# X-XSS-Protection removed: deprecated and can hurt modern XSS defenses; prefer CSP.
+# CSP allows jsDelivr (marked, EmailJS), EmailJS API, Google Fonts, remote article images,
+# and the Google Maps embed on /contact. Uses 'unsafe-inline' for inline scripts/styles (template).
+# Brotli: Netlify serves Content-Encoding: br for eligible assets when the browser advertises support;
+# no netlify.toml knob required (gzip/br are handled at the CDN edge).
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
-    X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://api.emailjs.com; frame-src 'self' https://www.google.com https://maps.google.com; object-src 'none'; base-uri 'self'; form-action 'self'"

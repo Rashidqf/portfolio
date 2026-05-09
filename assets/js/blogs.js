@@ -155,7 +155,7 @@ class BlogManager {
         let recentPostsHTML = '';
         this.blogsData.recentPosts.forEach(post => {
             const formattedDate = this.formatDate(post.date);
-            const blogUrl = post.file ? `blog/${post.file}` : `blog-details.html?id=${post.id}`;
+            const blogUrl = post.file ? `/blog/${post.file}` : `/blog-details?id=${post.id}`;
             recentPostsHTML += `
                 <li>
                     <a href="${blogUrl}" class="image">
@@ -197,7 +197,7 @@ class BlogManager {
         let blogsHTML = '';
         blogsToShow.forEach(blog => {
             const formattedDate = this.formatDate(blog.date);
-            const blogUrl = blog.file ? `blog/${blog.file}` : `blog-details.html?id=${blog.id}`;
+            const blogUrl = blog.file ? `/blog/${blog.file}` : `/blog-details?id=${blog.id}`;
             blogsHTML += `
                 <div class="blog-list-single-item">
                     <div class="inner-shape inner-shape-top-right"></div>

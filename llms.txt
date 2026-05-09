@@ -1,0 +1,33 @@
+# Rashid Yousufzai — Portfolio (https://rashidyousufzai.netlify.app)
+
+## Summary
+Rashid Yousufzai is a Full Stack Developer based in Karachi, Pakistan. He builds production web applications with the MERN stack (MongoDB, Express, React, Node.js), Laravel and WordPress sites, custom Shopify apps, and AI-assisted features using OpenAI and LangChain. He has 3+ years of professional experience across product teams and agencies.
+
+## Contact
+- Email: iamrashidyousufzai@gmail.com
+- Phone: +92 310 287 0579
+- LinkedIn: https://www.linkedin.com/in/rashidyousufzai/
+- GitHub: https://github.com/Rashidqf
+- X (Twitter): https://x.com/RashidYousufZa3
+
+## Primary pages
+- Home: /
+- Projects: /project-list
+- Blog index: /blogs
+- About: /about
+- Contact: /contact
+- XML sitemap: /sitemap.xml
+
+## Services (high level)
+- Full-stack web applications (MERN, REST APIs, dashboards)
+- Shopify public/private apps and storefront integrations
+- WordPress themes, plugins, and WooCommerce
+- AI integration (OpenAI API, LangChain, retrieval workflows)
+- Mobile-oriented web (responsive, hybrid app contexts)
+
+## Education
+- BS Computer Science — Sindh Madressatul Islam University (2020–2024)
+- Web & hybrid mobile — Saylani Mass IT Training SMIT (2022–2023)
+
+## Availability
+Available for freelance and contract engagements worldwide (remote).

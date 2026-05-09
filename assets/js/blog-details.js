@@ -130,10 +130,11 @@ class BlogDetailsManager {
         let relatedHTML = '';
         this.relatedBlogs.forEach(blog => {
             const formattedDate = this.formatDate(blog.date);
+            const relatedUrl = blog.file ? `/blog/${blog.file}` : `/blog-details?id=${blog.id}`;
             relatedHTML += `
                 <div class="blog-list-single-item">
                     <div class="inner-shape inner-shape-top-right"></div>
-                    <a href="blog-details.html?id=${blog.id}" class="image">
+                    <a href="${relatedUrl}" class="image">
                         <img src="${blog.image}" alt="${blog.title}">
                     </a>
                     <div class="content">
@@ -141,7 +142,7 @@ class BlogDetailsManager {
                             <a href="#" class="catagory">${blog.categoryName}</a>
                             <a href="#" class="date">${formattedDate}</a>
                         </div>
-                        <h4 class="title"><a href="blog-details.html?id=${blog.id}">${blog.title}</a></h4>
+                        <h4 class="title"><a href="${relatedUrl}">${blog.title}</a></h4>
                         <p class="excerpt">${blog.excerpt}</p>
                         <div class="post-meta-2">
                             <a href="#" class="icon-space-right">
@@ -175,7 +176,7 @@ class BlogDetailsManager {
                 <div class="text-center py-5">
                     <h3>Error</h3>
                     <p>${message}</p>
-                    <a href="blogs.html" class="btn btn-primary">Back to Blogs</a>
+                    <a href="/blogs" class="btn btn-primary">Back to Blogs</a>
                 </div>
             `;
         }

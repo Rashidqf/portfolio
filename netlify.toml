@@ -1,0 +1,182 @@
+# Static site — publish from repository root (no build step)
+[build]
+  publish = "."
+
+# --- 301: .html → canonical clean URLs ---
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/project-list.html"
+  to = "/project-list"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blogs.html"
+  to = "/blogs"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sitemap.html"
+  to = "/sitemap"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/404-page.html"
+  to = "/404-page"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog-details.html"
+  to = "/blog-details"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/service-details.html"
+  to = "/"
+  status = 301
+  force = true
+
+# Blog posts
+[[redirects]]
+  from = "/blog/create-shopify-app.html"
+  to = "/blog/create-shopify-app"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/pinecone-ai-database-powering-smarter-chatgpt-experiences.html"
+  to = "/blog/pinecone-ai-database-powering-smarter-chatgpt-experiences"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/ragflow-vs-gpt-which-one-right-for-ai-application.html"
+  to = "/blog/ragflow-vs-gpt-which-one-right-for-ai-application"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/comparing-ragflow-with-other-rag-frameworks-langchain-llamaindex.html"
+  to = "/blog/comparing-ragflow-with-other-rag-frameworks-langchain-llamaindex"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/open-source-ai-sidekick-ragflow.html"
+  to = "/blog/open-source-ai-sidekick-ragflow"
+  status = 301
+  force = true
+
+# Project detail pages
+[[redirects]]
+  from = "/project-detail/AI-PoweredReal-TimeEnglish.html"
+  to = "/project-detail/AI-PoweredReal-TimeEnglish"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/project-detail/PocketCoachAI.html"
+  to = "/project-detail/PocketCoachAI"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/project-detail/CustomBeadDesignerTool.html"
+  to = "/project-detail/CustomBeadDesignerTool"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/project-detail/DaylilyInteractive3DAISalesAssistant.html"
+  to = "/project-detail/DaylilyInteractive3DAISalesAssistant"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/project-detail/InstagramAnalytics.html"
+  to = "/project-detail/InstagramAnalytics"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/project-detail/NewsWebApplication.html"
+  to = "/project-detail/NewsWebApplication"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/project-detail/ProductDesignerApp.html"
+  to = "/project-detail/ProductDesignerApp"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/project-detail/trading-automation.html"
+  to = "/project-detail/trading-automation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/project-detail/custom-patches.html"
+  to = "/project-detail/custom-patches"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/project-detail/AIPoweredRecruitmentAutomation.html"
+  to = "/project-detail/AIPoweredRecruitmentAutomation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/project-detail/project-details.html"
+  to = "/project-detail/project-details"
+  status = 301
+  force = true
+
+# --- Cache static assets ---
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# --- Security / hygiene (no strict CSP — third-party scripts/fonts) ---
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"

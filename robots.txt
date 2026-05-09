@@ -4,32 +4,15 @@ Allow: /
 # Sitemap
 Sitemap: https://rashidyousufzai.netlify.app/sitemap.xml
 
-# Allow all important directories
-Allow: /project-detail/
-Allow: /blog/
-Allow: /assets/
+# Low-value paths (keep /assets/images allowlisted for image discovery)
+Disallow: /assets/fonts/
 
-# Allow all major search engines
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
+
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-# Disallow admin areas (if any)
-Disallow: /admin/
-Disallow: /wp-admin/
-Disallow: /cgi-bin/
-
-# Allow important pages
-Allow: /index.html
-Allow: /project-list.html
-Allow: /contact.html
-Allow: /about.html
-Allow: /assets/

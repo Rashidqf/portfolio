@@ -4516,7 +4516,6 @@ p:last-child {
     left: 50%;
     width: 120px;
     height: 60px;
-    /* background-image: url(../images/icon/menu-hover-shape.png); */
     visibility: hidden;
     opacity: 0;
     -webkit-transition: all 0.5s ease;

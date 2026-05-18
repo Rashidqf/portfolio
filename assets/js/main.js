@@ -283,10 +283,34 @@
     $('body').materialScrollTop();
 
     /************************************************
+     * Lazy-load marked.js (only when AI chat needs markdown)
+     ***********************************************/
+    var markedLoadPromise = null;
+    function loadMarked() {
+        if (typeof marked !== 'undefined') {
+            return Promise.resolve();
+        }
+        if (!markedLoadPromise) {
+            markedLoadPromise = new Promise(function(resolve, reject) {
+                var script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
+                script.defer = true;
+                script.onload = resolve;
+                script.onerror = reject;
+                document.head.appendChild(script);
+            });
+        }
+        return markedLoadPromise;
+    }
+
+    /************************************************
      * Chat Widget Functionality with AI Integration
      ***********************************************/
     (function() {
         const chatIcon = document.getElementById('chatIcon');
+        if (!chatIcon) {
+            return;
+        }
         const chatModal = document.getElementById('chatModal');
         const chatClose = document.getElementById('chatClose');
         const chatMinimize = document.getElementById('chatMinimize');
@@ -693,13 +717,11 @@ Answer every user question as if you are Rashid, using only the information abov
                 const messageElement = document.createElement('div');
                 messageElement.className = 'message received';
                 
-                // Configure marked for security
+                await loadMarked();
                 marked.setOptions({
                     breaks: true,
                     gfm: true
                 });
-                
-                // Render markdown to HTML
                 const renderedResponse = marked.parse(aiResponse);
 
                 messageElement.innerHTML = `

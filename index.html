@@ -46,11 +46,11 @@
   <meta name="twitter:image:alt" content="Rashid Yousufzai - Full Stack Developer" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <!-- Performance Optimizations -->
+  <!-- Performance: fonts load in parallel with CSS (not via @import in style.min.css) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://rashidyousufzai.netlify.app">
-  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap" />
   <!-- Favicon: absolute URLs + /favicon.ico for Google (see netlify.toml rewrite) -->
   <link rel="icon" href="https://rashidyousufzai.netlify.app/favicon.ico" sizes="any" />
   <link rel="shortcut icon" href="https://rashidyousufzai.netlify.app/favicon.ico" />
@@ -391,13 +391,13 @@
           <span></span>
         </div>
 
-        <div class="hero-portrait">
+        <!-- <div class="hero-portrait">
           <div class="image">
             <img class="img-fluid" src="assets/images/bg/profilePic.png"
               alt="Rashid Yousufzai - Full Stack Developer from Pakistan" width="560" height="560"
               fetchpriority="high" decoding="async" />
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <!-- ...::: End Hero Section :::... -->
@@ -1114,10 +1114,7 @@
                   data-nav-url="/project-detail/custom-patches">
                   <div class="img-box">
                     <div class="bg-overlay"></div>
-                    <div class="bg-image">
-                      <img src="assets/images/project/dubaiPatches.png"
-                        alt="Custom Patches - Laravel Web Application by Rashid Yousufzai" />
-                    </div>
+                    <div class="bg-image" style="background-image:url('assets/images/project/dubaiPatches.png')" aria-hidden="true"></div>
                     <div class="image">
                       <img src="assets/images/project/dubaiPatches.png"
                         alt="Custom Patches - Laravel Web Application by Rashid Yousufzai" />
@@ -1139,9 +1136,7 @@
                 <div class="project-box-single-item swiper-slide">
                   <div class="img-box">
                     <div class="bg-overlay"></div>
-                    <div class="bg-image">
-                      <img src="assets/images/project/embidrarayPatches.png" alt="" />
-                    </div>
+                    <div class="bg-image" style="background-image:url('assets/images/project/embidrarayPatches.png')" aria-hidden="true"></div>
                     <div class="image">
                       <img src="assets/images/project/embidrarayPatches.png" alt="" />
                     </div>
@@ -1162,9 +1157,7 @@
                 <div class="project-box-single-item swiper-slide">
                   <div class="img-box">
                     <div class="bg-overlay"></div>
-                    <div class="bg-image">
-                      <img src="assets/images/project/gulfPublisher.png" alt="" />
-                    </div>
+                    <div class="bg-image" style="background-image:url('assets/images/project/gulfPublisher.png')" aria-hidden="true"></div>
                     <div class="image">
                       <img src="assets/images/project/gulfPublisher.png" alt="" />
                     </div>
@@ -1185,9 +1178,7 @@
                 <div class="project-box-single-item swiper-slide">
                   <div class="img-box">
                     <div class="bg-overlay"></div>
-                    <div class="bg-image">
-                      <img src="assets/images/project/hoorFashion.png" alt="" />
-                    </div>
+                    <div class="bg-image" style="background-image:url('assets/images/project/hoorFashion.png')" aria-hidden="true"></div>
                     <div class="image">
                       <img src="assets/images/project/hoorFashion.png" alt="" />
                     </div>
@@ -1209,9 +1200,7 @@
                 <div class="project-box-single-item swiper-slide">
                   <div class="img-box">
                     <div class="bg-overlay"></div>
-                    <div class="bg-image">
-                      <img src="assets/images/project/td365.png" alt="" />
-                    </div>
+                    <div class="bg-image" style="background-image:url('assets/images/project/td365.png')" aria-hidden="true"></div>
                     <div class="image">
                       <img src="assets/images/project/td365.png" alt="" />
                     </div>
@@ -1793,7 +1782,10 @@
           <div class="chat-header">
             <div class="chat-header-info">
               <div class="chat-avatar">
-                <img src="assets/images/bg/profilePic.png" alt="Rashid Yousufzai" width="48" height="48" loading="lazy" decoding="async" />
+                <picture>
+                  <source srcset="assets/images/bg/profilePic.webp" type="image/webp" />
+                  <img src="assets/images/bg/profilePic.png" alt="Rashid Yousufzai" width="48" height="48" loading="lazy" decoding="async" />
+                </picture>
               </div>
               <div class="chat-user-info">
                 <h5>Rashid Yousufzai</h5>
@@ -1841,32 +1833,27 @@
   <!-- Global Vendor, plugins JS -->
 
   <!-- Vendor JS -->
-  <!-- <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
-    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script> -->
+  <!-- <script src="assets/js/vendor/modernizr-3.11.2.min.js" defer></script>
+    <script src="assets/js/vendor/jquery-3.6.0.min.js" defer></script>
+    <script src="assets/js/vendor/jquery-migrate-3.3.2.min.js" defer></script>
+    <script src="assets/js/vendor/bootstrap.bundle.min.js" defer></script> -->
 
   <!--Plugins JS-->
-  <!-- <script src="assets/js/plugins/swiper-bundle.min.js"></script>
-    <script src="assets/js/plugins/jquery.appear.min.js"></script>
-    <script src="assets/js/plugins/venobox.min.js"></script>
-    <script src="assets/js/plugins/jquery.waypoints.js"></script>
-    <script src="assets/js/plugins/images-loaded.min.js"></script>
-    <script src="assets/js/plugins/isotope.pkgd.min.js"></script>
-    <script src="assets/js/plugins/counter.js"></script>
-    <script src="assets/js/plugins/ajax-mail.js"></script>
-    <script src="assets/js/plugins/material-scrolltop.js"></script> -->
+  <!-- <script src="assets/js/plugins/swiper-bundle.min.js" defer></script>
+    <script src="assets/js/plugins/jquery.appear.min.js" defer></script>
+    <script src="assets/js/plugins/venobox.min.js" defer></script>
+    <script src="assets/js/plugins/jquery.waypoints.js" defer></script>
+    <script src="assets/js/plugins/images-loaded.min.js" defer></script>
+    <script src="assets/js/plugins/isotope.pkgd.min.js" defer></script>
+    <script src="assets/js/plugins/counter.js" defer></script>
+    <script src="assets/js/plugins/ajax-mail.js" defer></script>
+    <script src="assets/js/plugins/material-scrolltop.js" defer></script> -->
 
-  <!-- Minify Version -->
-  <script src="assets/js/vendor.min.js"></script>
-  <script src="assets/js/plugins.min.js"></script>
-
-  <!-- Markdown Parser -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
-  <!--Main JS (Common Activation Codes)-->
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/project-card-navigate.js"></script>
+  <!-- Minify Version (defer: non-blocking parse; order preserved) -->
+  <script src="assets/js/vendor.min.js" defer></script>
+  <script src="assets/js/plugins.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/project-card-navigate.js" defer></script>
 </body>
 
 </html>
